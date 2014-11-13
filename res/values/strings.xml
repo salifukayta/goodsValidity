@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FoodValidity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">Foods Validity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_confirm">ConfirmActivity</string>
+    <string name="title_activity_debug_db">DebugDBActivity</string>
+    <string name="title_activity_add_good">Add Good</string>
+    <string name="title_activity_view_goods">ViewGoodsActivity</string>
+    <string name="title_activity_view_goods_list">ViewGoodsListActivity</string>
+    <string name="welcom_msg">Welcom to remind Goods validity app</string>
+    <string name="debugdb">debugDB</string>
+    <string name="register">Register</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="remind_before">Remind Before</string>
+    <string name="date_validity">Date Validity</string>
+    <string name="quantity_remaining">Quantity remaining</string>
+    <string name="add_goods">Add Goods</string>
+    <string name="name">"Name "</string>
+    <string name="view_goods_validity">View Goods Validity</string>
+    <string name="congras_you_have_been_subscribed">Congras you have been subscribed</string>
+    <string name="your_goods_have_been_saved">Your goods have been saved !</string>
+    <string name="title_activity_confirm_add_goods">Confirm add goods</string>
+    <string name="pick_a_date">Pick a date</string>
+    <string name="pick_validity_date">Pick validity date</string>
+    <string name="pick_reminder_date">pick reminder date</string>
+    
+    <string name="notification_content_reminder_before"></string>
+    <string name="notification_content_reminder_after"> validity date is on </string>
+    <string name="notification_title_reminder">Validity date approches</string>
+    <string name="notification_ticker_reminder_after"> approches</string>
+    <string name="notification_ticker_reminder_before">Validity date of the goods </string>
+
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_update_goods_quantity">Update Quantity</string>
+    <string name="view_goods_dialog_message_after"> is valid until </string>
+    <string name="view_goods_dialog_message_before">The goods: </string>
+    <string name="view_goods_dialog_title">Goods Informations</string>
+    <string name="title_delete_goods">Delete Confimation</string>
+    <string name="delete_goods_message_1">"Are you sure you want to delete the goods "</string>
+    <string name="delete_goods_message_2">" having "</string>
+    <string name="delete_goods_message_3">" quantity and that expires on "</string>
+    <string name="delete_goods_message_4">" ?"</string>
+    <string name="btn_delete_goods">Delete</string>
+    <string name="title_date_picker">Date Picker</string>
+    <string name="btn_choose_date_in_picker">Choose Date</string>
+    <string name="error_message_data_validity_after_date_reminder">The date validity must be after the date reminder</string>
+    <string name="error_message_data_reminder_after_date_validity">The date reminder must be after the date validity</string>
+    <string name="error_message_none_class_detected">None class detected</string>
+    <string name="message_confirm_delete_goods">Confirm delete goods</string>
+    <string name="confirmation_goods_deleted_successfully">Goods Deleted Successfully</string>
+    <string name="confirmation_goods_updated_successfully">Goods Updated Successfully</string>
+    <string name="confirmation_goods_saved_successfully">Goods has been saved</string> 
+    <string name="error_message_goods_date_validity_must_be_chosen">Goods\'s date validity must be chosen</string>
+    <string name="error_message_date_remainder_must_be_chosen">Date of the remainder must be chosen</string>
+    <string name="error_message_quantity_remaining_must_be_chosen">Goods\'s quantity must be chosen</string>
+    <string name="error_message_goods_name_must_be_chosen">Goods\'s name must be chosen</string>
+    <string name="message_content_picker_date_end_validity_goods">Set date end of validity of the goods</string>
+    <string name="pick_reminder_for_goods_validity">Set a reminder for goods\'s validity</string>
+   
+    
+    <string name="error_only_numeric_digits_allowed">Only numeric digits are allowed.</string>
+	<string name="error_only_numeric_digits_range_allowed">Only numeric digits within the range %1$s - %2$s are allowed.</string>
+	<string name="error_this_field_cannot_contain_special_character">This field cannot contain any special character</string>
+	<string name="error_only_standard_letters_are_allowed">Only standard letters are allowed</string>
+	<string name="error_field_must_not_be_empty">The field must not be empty</string>
+    <string name="error_email_address_not_valid">Email address not valid</string>
+    <string name="error_creditcard_number_not_valid">Credit card number is not valid</string>
+    <string name="error_phone_not_valid">Phone number not valid</string>
+    <string name="error_domain_not_valid">Domain name not valid</string>
+	<string name="error_ip_not_valid">IP Address not valid</string>
+	<string name="error_url_not_valid">Web Url is not valid</string>
+    <string name="error_notvalid_personname">Not a valid first or last name.</string>
+    <string name="error_notvalid_personfullname">Not a valid full name.</string>
+    <string name="error_date_not_valid">Format not valid</string>
+   
+    <string name="quantity_food">"Quantity: "</string>
+    <string name="date_validity_food">"Date validity: "</string>
+        
+</resources>
+

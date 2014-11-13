@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:editTextForm="http://schemas.android.com/apk/res-auto"
+    style="@style/backgroundColor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sol.foodvalidity.activity.goods.AddGoodActivity" >
+
+    <TextView
+        android:id="@+id/txvAddGoodsTitle"
+        style="@style/PageTitleColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/add_goods"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/txvGoodsName"
+        style="@style/LabelColorSizeStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name" />
+
+    <com.andreabaccega.widget.FormEditText
+       style="@android:style/Widget.EditText"
+        android:id="@+id/etxGoodName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        editTextForm:emptyErrorString="@string/error_message_goods_name_must_be_chosen"
+        editTextForm:testType="nocheck">
+        <requestFocus />
+    </com.andreabaccega.widget.FormEditText>
+
+    <TextView
+        android:id="@+id/txvQuantityRemaining"
+        style="@style/LabelColorSizeStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/quantity_remaining" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/etxQuantityRemaining"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        editTextForm:emptyErrorString="@string/error_message_quantity_remaining_must_be_chosen"
+        editTextForm:testType="nocheck" />
+
+    <TextView
+        android:id="@+id/txvDateValidity"
+        style="@style/LabelColorSizeStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_validity" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/etxDateValidity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:focusable="false"
+        editTextForm:emptyErrorString="@string/error_message_goods_date_validity_must_be_chosen"
+        editTextForm:testType="nocheck" />
+	
+    <TextView
+        android:id="@+id/txvRemindBefore"
+        style="@style/LabelColorSizeStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remind_before" />
+
+	<com.andreabaccega.widget.FormEditText
+        android:id="@+id/etxDateReminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:focusable="false"
+        editTextForm:emptyErrorString="@string/error_message_date_remainder_must_be_chosen"
+        editTextForm:testType="nocheck" />
+
+    <TextView
+        android:id="@+id/nullTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnAddGoods"
+        style="@style/buttonAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/add_goods" />
+    
+    <Button
+        android:id="@+id/btnCancelAddGoods"
+        style="@style/buttonAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btn_cancel" />
+
+</LinearLayout>

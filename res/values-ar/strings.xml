@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FoodValidity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">صلاحية المواد الغذائية</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_confirm">ConfirmActivity</string>
+    <string name="title_activity_debug_db">DebugDBActivity</string>
+    <string name="title_activity_add_good">إضافة الغذاء</string>
+    <string name="title_activity_view_goods">عرض الأغذية</string>
+    <string name="title_activity_view_goods_list">ViewGoodsListActivity</string>
+    
+    <string name="welcom_msg">مرحبا بكم في تطبيق التذكير بصلاحية الغذاء</string>
+    <string name="debugdb">debugDB</string>
+    <string name="register">تسجيل</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="remind_before">تذكير قبل</string>
+    <string name="date_validity">تاريخ انتهاء الصلاحية</string>
+    <string name="quantity_remaining">الكمية المتبقية</string>
+    <string name="add_goods">إضافة غذاء</string>
+    <string name="name">"اسم"</string>
+    <string name="view_goods_validity">عرض صلاحية الأغذية</string>
+    <string name="congras_you_have_been_subscribed">Congras you have been subscribed</string>
+    <string name="your_goods_have_been_saved">تم حفظ الغذاء</string>
+    <string name="title_activity_confirm_add_goods">Confirm add goods</string>
+    <string name="pick_a_date">اختيار تاريخ</string>
+    <string name="pick_validity_date">اختيار تاريخ انتهاء الصلاحية</string>
+    <string name="pick_reminder_date">اختيار تاريخ تذكير</string>
+    
+    <string name="notification_content_reminder_before"></string>
+    <string name="notification_content_reminder_after"> validity date is on </string>
+    <string name="notification_title_reminder">Validity date approches</string>
+    <string name="notification_ticker_reminder_after"> approches</string>
+    <string name="notification_ticker_reminder_before">Validity date of the goods </string>
+
+    <string name="btn_cancel">إلغاء</string>
+    <string name="btn_update_goods_quantity">تحديث الكمية</string>
+    <string name="view_goods_dialog_message_before">" الغذاء"</string>
+    <string name="view_goods_dialog_message_after">" صالحة حتى"</string>
+    <string name="view_goods_dialog_title">معلومات الغذاء</string>
+    <string name="title_delete_goods">تأكيد ألحذف</string>
+    <string name="delete_goods_message_1">"هل أنت متأكد أنك تريد حذف الغذاء "</string>
+    <string name="delete_goods_message_2">" المتبقي  فيه "</string>
+    <string name="delete_goods_message_3">" والذي تنتهي صلحته في "</string>
+    <string name="delete_goods_message_4">" ?"</string>
+    <string name="btn_delete_goods">حذف</string>
+    <string name="title_date_picker">إلتقاط تاريخ</string>
+    <string name="btn_choose_date_in_picker">اختيار تاريخ</string>
+    <string name="error_message_data_validity_after_date_reminder">The date validity must be after the date reminder</string>
+    <string name="error_message_data_reminder_after_date_validity">The date reminder must be after the date validity</string>
+    <string name="error_message_none_class_detected">None class detected</string>
+    <string name="message_confirm_delete_goods">Confirm delete goods</string>
+    <string name="confirmation_goods_deleted_successfully">تم حذف الغذاء بنجاح </string>
+    <string name="confirmation_goods_updated_successfully">تم تحديث الغذاء بنجاح </string>
+    <string name="confirmation_goods_saved_successfully">تم حفظ الغذاء</string> 
+    <string name="error_message_goods_date_validity_must_be_chosen">Goods\'s date validity must be chosen</string>
+    <string name="error_message_date_remainder_must_be_chosen">Date of the remainder must be chosen</string>
+    <string name="error_message_quantity_remaining_must_be_chosen">Goods\'s quantity must be chosen</string>
+    <string name="error_message_goods_name_must_be_chosen">Goods\'s name must be chosen</string>
+    <string name="message_content_picker_date_end_validity_goods">تحديد تاريخ نهاية صلاحية الغذاء</string>
+    <string name="pick_reminder_for_goods_validity">Set a reminder for goods\'s validity</string>
+   
+	<string name="quantity_food">"كمية الغذاء: "</string>
+	<string name="date_validity_food">"تاريخ انتهاء الصلاحية: "</string>
+  
+</resources>
