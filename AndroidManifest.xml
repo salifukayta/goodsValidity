@@ -35,23 +35,23 @@
             android:label="@string/title_activity_debug_db" >
         </activity>
         <activity
-            android:name=".goods.AddGoodActivity"
+            android:name="com.sol.foodvalidity.activity.food.AddGoodActivity"
             android:label="@string/title_activity_add_good" >
         </activity>
         <activity
-            android:name=".goods.ViewGoodsActivity"
+            android:name="com.sol.foodvalidity.activity.food.ViewGoodsActivity"
             android:label="@string/title_activity_view_goods" >
         </activity>
         <activity
-            android:name=".goods.ViewGoodsListActivity"
+            android:name="com.sol.foodvalidity.activity.food.ViewGoodsListActivity"
             android:label="@string/title_activity_view_goods_list" >
         </activity>
         <activity
-            android:name=".goods.ConfirmAddGoodsActivity"
+            android:name="com.sol.foodvalidity.activity.food.ConfirmAddGoodsActivity"
             android:label="@string/title_activity_confirm_add_goods" >
         </activity>
         <activity
-            android:name=".goods.LunchDialogViewGoodsActivityFragment"
+            android:name="com.sol.foodvalidity.activity.food.LunchDialogViewGoodsActivityFragment"
             android:theme="@android:style/Theme.Dialog">
         </activity>
         
