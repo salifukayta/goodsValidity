@@ -3,8 +3,12 @@ package com.sol.foodvalidity.activity.food;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
@@ -35,11 +39,20 @@ public class ViewFoodsListActivity extends ListActivity implements OnDataPass<Fo
 		goodsDao = FoodDao.getInstance(getApplicationContext());
 		foodsList = goodsDao.getAllOnly();
 		livFoods = getListView();
-		foodsAdapter = new FoodListAdapter(this, foodsList);
-		livFoods.setAdapter(foodsAdapter);
+
+//		TextView txvEmptyMsg = (TextView) findViewById(R.id.emptyMsgId);
 		TextView txvEmptyMsg = new TextView(getApplicationContext());
 		txvEmptyMsg.setText(getString(R.string.no_foods_added));
+		txvEmptyMsg.setTextSize(24);
+		txvEmptyMsg.setTextColor(Color.BLACK);
+		txvEmptyMsg.setGravity(Gravity.CENTER);
+		
+		((ViewGroup)livFoods.getParent()).addView(txvEmptyMsg);
 		livFoods.setEmptyView(txvEmptyMsg);
+		
+		foodsAdapter = new FoodListAdapter(this, foodsList);
+		livFoods.setAdapter(foodsAdapter);
+		Log.i("on create food list", foodsList.isEmpty()+"!");
 		
 		livFoods.setOnItemLongClickListener(new OnItemLongClickListener() {
 			@Override

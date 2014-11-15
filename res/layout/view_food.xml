@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="com.sol.foodvalidity.activity.fragment.ViewGoodsDialogFragment">
+    tools:context="com.sol.foodvalidity.activity.food.fragment.ViewGoodsDialogFragment">
             
     <com.andreabaccega.widget.FormEditText
         editTextForm:testType="nocheck"

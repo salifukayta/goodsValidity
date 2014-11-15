@@ -8,8 +8,7 @@
     <string name="title_activity_confirm">ConfirmActivity</string>
     <string name="title_activity_debug_db">DebugDBActivity</string>
     <string name="title_activity_add_good">Ajout nourriture</string>
-    <string name="title_activity_view_goods">ViewGoodsActivity</string>
-    <string name="title_activity_view_goods_list">ViewGoodsListActivity</string>
+    <string name="title_activity_view_goods_list">Liste des nourritures</string>
     <string name="title_activity_confirm_add_goods">Confirm add goods</string>
     <string name="welcom_msg">Bienvenu à l\'app de rappelle de date de vaidité de votre nourriture</string>
     <string name="debugdb">debugBD</string>
