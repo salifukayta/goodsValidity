@@ -18,14 +18,14 @@ import com.andreabaccega.widget.FormEditText;
 import com.sol.foodvalidity.activity.R;
 import com.sol.foodvalidity.activity.goods.i.OnDataPass;
 import com.sol.foodvalidity.commun.TypeOperation;
-import com.sol.foodvalidity.dao.GoodsDao;
+import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.model.Food;
 import com.sol.foodvalidity.utils.DateUtils;
 
 public class ViewGoodsDialogFragment extends DialogFragment {
     
 	private OnDataPass<Food, TypeOperation> dataPass;
-	private GoodsDao goodsDao;
+	private FoodDao goodsDao;
 	private Food goods;
 	private FormEditText etxQuantityGoods;
 	
@@ -39,7 +39,7 @@ public class ViewGoodsDialogFragment extends DialogFragment {
 	@SuppressLint("InflateParams")
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		goodsDao = GoodsDao.getInstance(getActivity().getApplicationContext());
+		goodsDao = FoodDao.getInstance(getActivity().getApplicationContext());
 		goods = dataPass.getClicked();
 		View rootView = getActivity().getLayoutInflater().inflate(R.layout.view_food, null);
 		etxQuantityGoods = (FormEditText) rootView.findViewById(R.id.updateQuantityGoods);

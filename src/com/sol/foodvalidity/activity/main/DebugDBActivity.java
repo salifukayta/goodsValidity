@@ -10,7 +10,7 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 
 import com.sol.foodvalidity.activity.R;
-import com.sol.foodvalidity.dao.GoodsDao;
+import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.dao.UserDao;
 import com.sol.foodvalidity.model.Food;
 import com.sol.foodvalidity.model.User;
@@ -20,7 +20,7 @@ public class DebugDBActivity extends Activity {
 	private static final String EXTRA_VALUE_GOODS_CLASS_TYPE = "goods";
 	private static final String EXTRA_VALUE_USER_CLASS_TYPE = "user";
 	private static final String EXTRA_KEY_CLASS_TYPE = "classType";
-	private GoodsDao goodsDao;
+	private FoodDao goodsDao;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class DebugDBActivity extends Activity {
 	}
 	
 	protected void printGoodsList(GridLayout gridLayout) {
-		goodsDao = GoodsDao.getInstance(getApplicationContext());
+		goodsDao = FoodDao.getInstance(getApplicationContext());
 		goodsDao.open();
 		List<Food> goodsList = goodsDao.getAll();		
 		gridLayout.setRowCount(goodsList.size());

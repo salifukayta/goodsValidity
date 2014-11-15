@@ -20,20 +20,20 @@ import com.sol.foodvalidity.activity.goods.fragment.DatePickerDialogFragment;
 import com.sol.foodvalidity.activity.goods.i.OnDataPass;
 import com.sol.foodvalidity.activity.main.HomeActivity;
 import com.sol.foodvalidity.commun.TypeDate;
-import com.sol.foodvalidity.dao.GoodsDao;
+import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.model.Food;
 import com.sol.foodvalidity.receiver.AlarmValidityReceiver;
 import com.sol.foodvalidity.service.AlarmSetter;
 import com.sol.foodvalidity.utils.DateUtils;
 
-public class AddGoodActivity extends Activity implements OnDataPass<TypeDate, Calendar>{
+public class AddFoodActivity extends Activity implements OnDataPass<TypeDate, Calendar>{
 	
 	private static final String TAG_PICK_DATE_REMAINDER = "Pick date remainder";
 	private static final String TAG_PICK_DATE_VALIDITY = "Pick date validity";
 	private static final String EXTRA_KEY_GOODS_DATA = "goodsData";
 	private Calendar calendarValidity;
 	private Calendar calendarReminder;
-	private GoodsDao goodsDao;
+	private FoodDao goodsDao;
 	private TypeDate typeDate;
 	
 	private FormEditText etxGoodName;
@@ -48,7 +48,7 @@ public class AddGoodActivity extends Activity implements OnDataPass<TypeDate, Ca
 		setContentView(R.layout.add_food);
 		
 		final Activity thisActivity = this;
-        goodsDao = GoodsDao.getInstance(getApplicationContext());		
+        goodsDao = FoodDao.getInstance(getApplicationContext());		
         Button btnAddGoods = (Button) findViewById(R.id.btnAddGoods);
         Button btnCancelAddGoods = (Button) findViewById(R.id.btnCancelAddGoods);
 		

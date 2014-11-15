@@ -17,14 +17,14 @@ import com.sol.foodvalidity.activity.goods.fragment.ConfirmationDeleteGoodsFragm
 import com.sol.foodvalidity.activity.goods.fragment.ViewGoodsDialogFragment;
 import com.sol.foodvalidity.activity.goods.i.OnDataPass;
 import com.sol.foodvalidity.commun.TypeOperation;
-import com.sol.foodvalidity.dao.GoodsDao;
+import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.model.Food;
 
-public class ViewGoodsListActivity extends ListActivity implements OnDataPass<Food, TypeOperation> {
+public class ViewFoodsListActivity extends ListActivity implements OnDataPass<Food, TypeOperation> {
 
 	private static final String TAG_VIEW_GOODS_DETAILS = "View Goods Details";
 	private FoodListAdapter foodsAdapter;
-	private GoodsDao goodsDao;
+	private FoodDao goodsDao;
 	private Food clickedFood;
 	private List<Food> foodsList;
 	private ListView livFoods;
@@ -32,7 +32,7 @@ public class ViewGoodsListActivity extends ListActivity implements OnDataPass<Fo
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		goodsDao = GoodsDao.getInstance(getApplicationContext());
+		goodsDao = FoodDao.getInstance(getApplicationContext());
 		foodsList = goodsDao.getAllOnly();
 		livFoods = getListView();
 		foodsAdapter = new FoodListAdapter(this, foodsList);

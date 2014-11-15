@@ -10,9 +10,9 @@ import android.util.Log;
 
 import com.sol.foodvalidity.model.Food;
 
-public class GoodsDao extends AbstractDaoBase {
+public class FoodDao extends AbstractDaoBase {
 
-	private static GoodsDao instance;
+	private static FoodDao instance;
 	public static final String TABLE_NAME = "goods";
 	public static final String KEY = "id";
 	public static final String GOODS_NAME = "name";
@@ -33,23 +33,23 @@ public class GoodsDao extends AbstractDaoBase {
 
 	public static final String TABLE_DROP = "DROP TABLE IF EXISTS " + TABLE_NAME + ";";
 	
-	private GoodsDao(Context pContext) {
+	private FoodDao(Context pContext) {
 		super(pContext);
 	}
 	
-	public static GoodsDao getInstance(Context pContext) {
+	public static FoodDao getInstance(Context pContext) {
 		if (instance == null) {
-			 synchronized (GoodsDao.class) {
+			 synchronized (FoodDao.class) {
 				 if (instance == null) {
-					 instance = new GoodsDao(pContext);
+					 instance = new FoodDao(pContext);
 				 }
 			 }
 		}
 		return instance;
 	}
-	public static GoodsDao getInstance() {
+	public static FoodDao getInstance() {
 		if (instance == null) {
-			synchronized (GoodsDao.class) {
+			synchronized (FoodDao.class) {
 				if (instance == null) {
 					Log.e("context not found", "call getInstance(Context pContext) before calling getInstance()");
 				}

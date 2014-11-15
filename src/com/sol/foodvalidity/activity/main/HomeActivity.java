@@ -10,8 +10,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.sol.foodvalidity.activity.R;
-import com.sol.foodvalidity.activity.goods.AddGoodActivity;
-import com.sol.foodvalidity.activity.goods.ViewGoodsListActivity;
+import com.sol.foodvalidity.activity.goods.AddFoodActivity;
+import com.sol.foodvalidity.activity.goods.ViewFoodsListActivity;
 import com.sol.foodvalidity.activity.register.RegisterActivity;
 
 public class HomeActivity extends Activity {
@@ -33,14 +33,14 @@ public class HomeActivity extends Activity {
 		btnGoAddGoods.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(getApplicationContext(), AddGoodActivity.class));		
+				startActivity(new Intent(getApplicationContext(), AddFoodActivity.class));		
 			}
 		});
 		Button btnViewGoodsValidity = (Button) findViewById(R.id.viewGoodsValidity);
 		btnViewGoodsValidity.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(getApplicationContext(), ViewGoodsListActivity.class));		
+				startActivity(new Intent(getApplicationContext(), ViewFoodsListActivity.class));		
 			}
 		});
 	}

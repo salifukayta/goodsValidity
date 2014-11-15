@@ -14,7 +14,7 @@ import android.util.Log;
 import com.sol.foodvalidity.activity.R;
 import com.sol.foodvalidity.activity.goods.i.OnDataPass;
 import com.sol.foodvalidity.commun.TypeOperation;
-import com.sol.foodvalidity.dao.GoodsDao;
+import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.model.Food;
 import com.sol.foodvalidity.utils.DateUtils;
 
@@ -32,7 +32,7 @@ public class ConfirmationDeleteGoodsFragment extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		final Food goods = dataPass.getClicked();
-		final GoodsDao goodsDao = GoodsDao.getInstance(getActivity().getApplicationContext());
+		final FoodDao goodsDao = FoodDao.getInstance(getActivity().getApplicationContext());
 
 		// Use the Builder class for convenient dialog construction
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())

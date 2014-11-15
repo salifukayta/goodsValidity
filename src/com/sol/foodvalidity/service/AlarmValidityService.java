@@ -11,7 +11,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 import com.sol.foodvalidity.activity.R;
-import com.sol.foodvalidity.activity.goods.ViewGoodsListActivity;
+import com.sol.foodvalidity.activity.goods.ViewFoodsListActivity;
 import com.sol.foodvalidity.model.Food;
 import com.sol.foodvalidity.utils.DateUtils;
 
@@ -37,7 +37,7 @@ public class AlarmValidityService extends Service {
 	@Override
 	public void onStart(Intent intent, int startId) {
 		Log.i("alarm", "begin onStart Service");
-		Intent intentNextView = new Intent(this.getApplicationContext(), ViewGoodsListActivity.class);
+		Intent intentNextView = new Intent(this.getApplicationContext(), ViewFoodsListActivity.class);
 		intentNextView.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		PendingIntent pendingNotificationIntent = PendingIntent.getActivity(this.getApplicationContext(), 0, 
 				intentNextView, PendingIntent.FLAG_UPDATE_CURRENT);
