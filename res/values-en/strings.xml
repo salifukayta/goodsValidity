@@ -47,7 +47,6 @@
     <string name="title_date_picker">Date Picker</string>
     <string name="btn_choose_date_in_picker">Choose Date</string>
     <string name="error_message_data_validity_after_date_reminder">The date validity must be after the date reminder</string>
-    <string name="error_message_data_reminder_after_date_validity">The date reminder must be after the date validity</string>
     <string name="error_message_none_class_detected">None class detected</string>
     <string name="message_confirm_delete_goods">Confirm delete goods</string>
     <string name="confirmation_goods_deleted_successfully">Goods Deleted Successfully</string>
@@ -62,5 +61,6 @@
     
 	<string name="quantity_food">"Quantity: "</string>
 	<string name="date_validity_food">"Date validity: "</string>
+    <string name="no_foods_added">no foods added</string>
   
 </resources>

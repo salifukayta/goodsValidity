@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sol.foodvalidity.activity.R;
@@ -36,6 +37,9 @@ public class ViewGoodsListActivity extends ListActivity implements OnDataPass<Fo
 		livFoods = getListView();
 		foodsAdapter = new FoodListAdapter(this, foodsList);
 		livFoods.setAdapter(foodsAdapter);
+		TextView txvEmptyMsg = new TextView(getApplicationContext());
+		txvEmptyMsg.setText(getString(R.string.no_foods_added));
+		livFoods.setEmptyView(txvEmptyMsg);
 		
 		livFoods.setOnItemLongClickListener(new OnItemLongClickListener() {
 			@Override

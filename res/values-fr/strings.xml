@@ -44,7 +44,6 @@
     <string name="title_date_picker">Veuillez Définir une date</string>
     <string name="btn_choose_date_in_picker">Définir date</string>
     <string name="error_message_data_validity_after_date_reminder">La date de validité doit être après la date de rappelle</string>
-    <string name="error_message_data_reminder_after_date_validity">La date de rappelle doit être après la date de validité</string>
     <string name="error_message_none_class_detected">Aucune class n\'a été détecté</string>    
     <string name="message_confirm_delete_goods">Confirmation suppression nourriture</string>
     <string name="confirmation_goods_deleted_successfully">Suppression de la nourriture effectuée avec succée</string>
@@ -59,5 +58,6 @@
 
 	<string name="quantity_food">"Quantité: "</string>
 	<string name="date_validity_food">"Date de fin de validité: "</string>
+    <string name="no_foods_added">Pas de nourriture ajouté</string>
   
 </resources>

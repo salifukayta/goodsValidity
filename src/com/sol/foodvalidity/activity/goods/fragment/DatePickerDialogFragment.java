@@ -16,9 +16,7 @@ import android.view.View;
 import android.widget.DatePicker;
 
 import com.sol.foodvalidity.activity.R;
-import com.sol.foodvalidity.activity.goods.fragment.model.PickDateModelService;
 import com.sol.foodvalidity.activity.goods.i.OnDataPass;
-import com.sol.foodvalidity.activity.goods.model.ModelDatePicker;
 import com.sol.foodvalidity.commun.TypeDate;
 import com.sol.foodvalidity.utils.DateUtils;
 
@@ -36,10 +34,9 @@ public class DatePickerDialogFragment extends DialogFragment {
 	@SuppressLint("InflateParams")
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		final ModelDatePicker modelDatePicker = PickDateModelService.getInstance().initModelDatePicker(dataPass.getClicked());
 		View rootView = getActivity().getLayoutInflater().inflate(R.layout.date_picker, null);
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity()).setView(rootView)
-				.setTitle(R.string.title_date_picker).setMessage(modelDatePicker.getViewMsg());
+				.setTitle(R.string.title_date_picker).setMessage(getViewMsg());
 		final DatePicker datePicker = (DatePicker) rootView.findViewById(R.id.datePickerId);
 		
 		builder.setPositiveButton(R.string.btn_choose_date_in_picker, new DialogInterface.OnClickListener() {
@@ -66,6 +63,19 @@ public class DatePickerDialogFragment extends DialogFragment {
 		dialogDatePicker.show();
 		setButtonPickerLaf(dialogDatePicker);
 		return dialogDatePicker;
+	}
+
+	private int getViewMsg() {
+		int viewMsg = -1;
+		switch (dataPass.getClicked()) {
+			case dateValidity:
+				viewMsg = R.string.message_content_picker_date_end_validity_goods;
+				break;
+			case dateReminder:
+				viewMsg =	R.string.pick_reminder_for_goods_validity;
+				break;
+		}
+		return viewMsg;
 	}
 
 	private void setButtonPickerLaf(AlertDialog dialogDatePicker) {
