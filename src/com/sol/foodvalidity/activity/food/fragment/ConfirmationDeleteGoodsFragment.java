@@ -11,8 +11,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.sol.foodvalidity.activity.R;
-import com.sol.foodvalidity.activity.food.i.OnDataPass;
+import com.sol.foodvalidity.R;
+import com.sol.foodvalidity.activity.food.i.IOnDataPass;
 import com.sol.foodvalidity.commun.TypeOperation;
 import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.model.Food;
@@ -20,13 +20,13 @@ import com.sol.foodvalidity.utils.DateUtils;
 
 public class ConfirmationDeleteGoodsFragment extends DialogFragment {
 
-	private OnDataPass<Food, TypeOperation> dataPass;
+	private IOnDataPass<Food, TypeOperation> dataPass;
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		dataPass = (OnDataPass<Food, TypeOperation>) activity;
+		dataPass = (IOnDataPass<Food, TypeOperation>) activity;
 	}
 
 	@Override

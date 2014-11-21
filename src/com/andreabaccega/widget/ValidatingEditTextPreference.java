@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import com.sol.foodvalidity.activity.R;
 
 /**
  * A validating {@link EditTextPreference} validation is performed when the OK or AlertDialog.BUTTON_POSITIVE button is clicked. When invalid an error message

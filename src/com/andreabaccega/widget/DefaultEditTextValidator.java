@@ -32,14 +32,15 @@ import com.andreabaccega.formedittextvalidator.PhoneValidator;
 import com.andreabaccega.formedittextvalidator.RegexpValidator;
 import com.andreabaccega.formedittextvalidator.Validator;
 import com.andreabaccega.formedittextvalidator.WebUrlValidator;
-import com.sol.foodvalidity.activity.R;
+import com.sol.foodvalidity.R;
 
 /**
  * Default implementation of an {@link EditTextValidator}
  */
 public class DefaultEditTextValidator implements EditTextValidator {
 	
-	private static final int errorColor = Color.BLACK;
+	private static final int errorColor = Color.WHITE;
+//	private static final int errorColor = Color.BLACK;
 
 	/**
 	 * support dynamic new DefaultEditTextValidator() ,used for Java call
@@ -301,6 +302,7 @@ public class DefaultEditTextValidator implements EditTextValidator {
 	public void showUIError() {
 		if (mValidator.hasErrorMessage()) {
 		    String estring = mValidator.getErrorMessage() ;
+		   		    
 		    ForegroundColorSpan fgcspan = new ForegroundColorSpan(errorColor);
 		    SpannableStringBuilder ssbuilder = new SpannableStringBuilder(estring);
 		    ssbuilder.setSpan(fgcspan, 0, estring.length(), 0);

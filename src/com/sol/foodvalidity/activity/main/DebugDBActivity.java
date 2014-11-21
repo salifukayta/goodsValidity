@@ -4,12 +4,10 @@ import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
-import com.sol.foodvalidity.activity.R;
+import com.sol.foodvalidity.R;
 import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.dao.UserDao;
 import com.sol.foodvalidity.model.Food;
@@ -76,22 +74,4 @@ public class DebugDBActivity extends Activity {
 		}
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.debug_db, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 }

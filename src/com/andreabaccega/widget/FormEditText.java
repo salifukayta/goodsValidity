@@ -13,7 +13,6 @@ import android.view.KeyEvent;
 import android.widget.EditText;
 
 import com.andreabaccega.formedittextvalidator.Validator;
-import com.sol.foodvalidity.activity.R;
 
 /**
  * EditText Extension to be used in order to create forms in android.

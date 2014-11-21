@@ -59,4 +59,13 @@
 	<string name="date_validity_food">"Date de fin de validité: "</string>
     <string name="no_foods_added">Pas de nourriture ajouté</string>
   
+	<string name="action_help">Aide</string>
+    <string name="action_exit">Sortir</string>
+    <string name="close">Fermer</string>
+    <string name="how_to_use_the_application">Comment utiliser l\'application</string>
+    <string name="help_msg">- D\'abord ajouter de la nourritures à l\'application
+		\n- Ensuite, il est possible de voir la liste des nourrites afin de consulter leurs informations
+		\n- Vous pouvez mettre à jour la quantité de nourriture en cliquant dessus
+		\n- Enfin, vous pouvez supprimer une nourriture par un appui long</string>
+    <string name="sort_by_date_validity">Trier par date validité</string>
 </resources>

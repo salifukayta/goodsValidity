@@ -15,20 +15,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 
-import com.sol.foodvalidity.activity.R;
-import com.sol.foodvalidity.activity.food.i.OnDataPass;
+import com.sol.foodvalidity.R;
+import com.sol.foodvalidity.activity.food.i.IOnDataPass;
 import com.sol.foodvalidity.commun.TypeDate;
 import com.sol.foodvalidity.utils.DateUtils;
 
 public class DatePickerDialogFragment extends DialogFragment {
 	
-	private OnDataPass<TypeDate, Calendar> dataPass;
+	private IOnDataPass<TypeDate, Calendar> dataPass;
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		dataPass = (OnDataPass<TypeDate, Calendar>) activity;
+		dataPass = (IOnDataPass<TypeDate, Calendar>) activity;
 	}
 
 	@SuppressLint("InflateParams")

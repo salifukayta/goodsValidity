@@ -5,7 +5,6 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 import com.andreabaccega.formedittextvalidator.Validator;
-import com.sol.foodvalidity.activity.R;
 
 /**
  * Interface for encapsulating validation of an EditText control

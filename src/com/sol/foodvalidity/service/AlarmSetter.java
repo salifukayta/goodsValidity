@@ -7,7 +7,6 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.SystemClock;
 import android.util.Log;
 
 import com.sol.foodvalidity.model.Food;
@@ -46,10 +45,10 @@ public class AlarmSetter {
 		systemCalendar.setTimeInMillis(System.currentTimeMillis());			
 		systemCalendar.set(Calendar.MINUTE, (systemCalendar.get(Calendar.MINUTE) + 1));
 		
-		long triggerAtMillis = SystemClock.elapsedRealtime() +	60 * 1000;
-		alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
+//		long triggerAtMillis = SystemClock.elapsedRealtime() +	60 * 1000;
+//		alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
 		//TODO  à remettre à la fin des DEV
-//		alarmManager.set(AlarmManager.RTC_WAKEUP, goods.getRemindBefore().getTimeInMillis(), pendingIntent);
+		alarmManager.set(AlarmManager.RTC_WAKEUP, goods.getRemindBefore().getTimeInMillis(), pendingIntent);
 		Log.i("alarmSet", systemCalendar.get(Calendar.HOUR_OF_DAY) + "h" + systemCalendar.get(Calendar.MINUTE)
 				+ "min");
 }

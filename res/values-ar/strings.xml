@@ -65,4 +65,13 @@
 	<string name="date_validity_food">"تاريخ انتهاء الصلاحية: "</string>
     <string name="no_foods_added">لم يتيم إظافة أي طعام</string>
   
+	<string name="action_help">مساعدة</string>
+    <string name="action_exit">خروج</string>
+    <string name="close">إغلاق</string>
+    <string name="how_to_use_the_application">كيفية استخدام التطبيق</string>
+    <string name="help_msg">- أولا قم بإضافة الأطعمة إلى التطبيق 
+        \n- ثم يمكنك الاطلاع على قائمة المواد الغذائية و معلوماتها  
+        \n- من الممكن تحديث كمية الطعام بالنقر عليه 
+        \n- وأخيرا يمكنك حذف أي الغذاء بالضغط عليه لفترة طويلة</string>
+    <string name="sort_by_date_validity">ترتيب حسب تاريخ الصلاحية</string>
 </resources>

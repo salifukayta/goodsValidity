@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.sol.foodvalidity.activity.R;
+import com.sol.foodvalidity.R;
 import com.sol.foodvalidity.model.Food;
 import com.sol.foodvalidity.utils.DateUtils;
 

@@ -15,8 +15,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.andreabaccega.widget.FormEditText;
-import com.sol.foodvalidity.activity.R;
-import com.sol.foodvalidity.activity.food.i.OnDataPass;
+import com.sol.foodvalidity.R;
+import com.sol.foodvalidity.activity.food.i.IOnDataPass;
 import com.sol.foodvalidity.commun.TypeOperation;
 import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.model.Food;
@@ -24,7 +24,7 @@ import com.sol.foodvalidity.utils.DateUtils;
 
 public class ViewGoodsDialogFragment extends DialogFragment {
     
-	private OnDataPass<Food, TypeOperation> dataPass;
+	private IOnDataPass<Food, TypeOperation> dataPass;
 	private FoodDao goodsDao;
 	private Food goods;
 	private FormEditText etxQuantityGoods;
@@ -33,7 +33,7 @@ public class ViewGoodsDialogFragment extends DialogFragment {
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		dataPass = (OnDataPass<Food, TypeOperation>) activity;
+		dataPass = (IOnDataPass<Food, TypeOperation>) activity;
 	}
 	
 	@SuppressLint("InflateParams")

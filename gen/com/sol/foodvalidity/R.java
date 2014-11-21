@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.sol.foodvalidity.activity;
+package com.sol.foodvalidity;
 
 public final class R {
     public static final class attr {
@@ -109,7 +109,6 @@ containing a value of this type.
  Default screen margins, per the Android Design guidelines. 
  Default screen margins, per the Android Design guidelines. 
  Default screen margins, per the Android Design guidelines. 
- Default screen margins, per the Android Design guidelines. 
          */
         public static final int activity_horizontal_margin=0x7f050000;
         public static final int activity_vertical_margin=0x7f050001;
@@ -130,64 +129,65 @@ containing a value of this type.
         public static final int ic_launcher=0x7f02000c;
     }
     public static final class id {
-        public static final int action_settings=0x7f060039;
-        public static final int addressSubscription=0x7f06002f;
+        public static final int action_exit=0x7f060039;
+        public static final int action_help=0x7f060038;
+        public static final int action_trie=0x7f06003a;
+        public static final int addressSubscription=0x7f06002e;
         public static final int alpha=0x7f060002;
         public static final int alphaNumeric=0x7f060003;
-        public static final int btnAddGoods=0x7f06001a;
-        public static final int btnCancelAddGoods=0x7f06001b;
-        public static final int cancelSubscribeButton=0x7f060033;
-        public static final int confirmAddMsg=0x7f06001e;
-        public static final int confirmMsg=0x7f06001c;
+        public static final int btnAddGoods=0x7f060019;
+        public static final int btnCancelAddGoods=0x7f06001a;
+        public static final int cancelSubscribeButton=0x7f060032;
+        public static final int confirmAddMsg=0x7f06001d;
+        public static final int confirmMsg=0x7f06001b;
         public static final int creditCard=0x7f060005;
         public static final int custom=0x7f06000b;
         public static final int date=0x7f06000e;
-        public static final int datePickerId=0x7f06001f;
+        public static final int datePickerId=0x7f06001e;
         public static final int domainName=0x7f060007;
         public static final int email=0x7f060004;
-        public static final int emailSubscription=0x7f060031;
+        public static final int emailSubscription=0x7f060030;
         public static final int etxDateReminder=0x7f060018;
         public static final int etxDateValidity=0x7f060016;
         public static final int etxGoodName=0x7f060012;
         public static final int etxQuantityRemaining=0x7f060014;
-        public static final int firstLineList=0x7f060034;
-        public static final int goDebugDB=0x7f06001d;
-        public static final int goRegister=0x7f060027;
-        public static final int iconList=0x7f060035;
+        public static final int firstLineList=0x7f060033;
+        public static final int goDebugDB=0x7f06001c;
+        public static final int goRegister=0x7f060026;
+        public static final int iconList=0x7f060034;
         public static final int ipAddress=0x7f060008;
-        public static final int nameSubscription=0x7f06002b;
+        public static final int nameSubscription=0x7f06002a;
         public static final int nocheck=0x7f06000a;
-        public static final int nullTextView=0x7f060019;
-        public static final int nullTextView1=0x7f060022;
-        public static final int nullTextView2=0x7f060026;
-        public static final int nullTextView3=0x7f060028;
-        public static final int nullTextView5=0x7f060023;
-        public static final int nullTextView6=0x7f060024;
+        public static final int nullTextView1=0x7f060021;
+        public static final int nullTextView2=0x7f060025;
+        public static final int nullTextView3=0x7f060027;
+        public static final int nullTextView5=0x7f060022;
+        public static final int nullTextView6=0x7f060023;
         public static final int numeric=0x7f060001;
         public static final int numericRange=0x7f06000f;
-        public static final int passwordSubscription=0x7f06002d;
+        public static final int passwordSubscription=0x7f06002c;
         public static final int personFullName=0x7f06000d;
         public static final int personName=0x7f06000c;
         public static final int phone=0x7f060006;
         public static final int regexp=0x7f060000;
-        public static final int rootList=0x7f060020;
-        public static final int secondLineList=0x7f060036;
-        public static final int subscribeButton=0x7f060032;
-        public static final int thirdLineList=0x7f060037;
+        public static final int rootList=0x7f06001f;
+        public static final int secondLineList=0x7f060035;
+        public static final int subscribeButton=0x7f060031;
+        public static final int thirdLineList=0x7f060036;
         public static final int txvAddGoodsTitle=0x7f060010;
-        public static final int txvAdress=0x7f06002e;
+        public static final int txvAdress=0x7f06002d;
         public static final int txvDateValidity=0x7f060015;
-        public static final int txvEmail=0x7f060030;
+        public static final int txvEmail=0x7f06002f;
         public static final int txvGoodsName=0x7f060011;
-        public static final int txvInscriptionForm=0x7f060029;
-        public static final int txvName=0x7f06002a;
-        public static final int txvPassword=0x7f06002c;
+        public static final int txvInscriptionForm=0x7f060028;
+        public static final int txvName=0x7f060029;
+        public static final int txvPassword=0x7f06002b;
         public static final int txvQuantityRemaining=0x7f060013;
         public static final int txvRemindBefore=0x7f060017;
-        public static final int updateQuantityGoods=0x7f060038;
-        public static final int viewGoodsValidity=0x7f060025;
+        public static final int updateQuantityGoods=0x7f060037;
+        public static final int viewGoodsValidity=0x7f060024;
         public static final int webUrl=0x7f060009;
-        public static final int welcomMsg=0x7f060021;
+        public static final int welcomMsg=0x7f060020;
     }
     public static final class layout {
         public static final int add_food=0x7f030000;
@@ -214,6 +214,8 @@ containing a value of this type.
         public static final int darara=0x7f040000;
     }
     public static final class string {
+        public static final int action_exit=0x7f070049;
+        public static final int action_help=0x7f070048;
         public static final int action_settings=0x7f070001;
         public static final int add_goods=0x7f070010;
         public static final int app_name=0x7f070000;
@@ -221,6 +223,7 @@ containing a value of this type.
         public static final int btn_choose_date_in_picker=0x7f07002a;
         public static final int btn_delete_goods=0x7f070028;
         public static final int btn_update_goods_quantity=0x7f07001f;
+        public static final int close=0x7f07004a;
         public static final int confirmation_goods_deleted_successfully=0x7f07002e;
         public static final int confirmation_goods_saved_successfully=0x7f070030;
         public static final int confirmation_goods_updated_successfully=0x7f07002f;
@@ -238,7 +241,7 @@ containing a value of this type.
         public static final int error_email_address_not_valid=0x7f07003c;
         public static final int error_field_must_not_be_empty=0x7f07003b;
         public static final int error_ip_not_valid=0x7f070040;
-        public static final int error_message_data_reminder_after_date_validity=0x7f070048;
+        public static final int error_message_data_reminder_after_date_validity=0x7f07004e;
         public static final int error_message_data_validity_after_date_reminder=0x7f07002b;
         public static final int error_message_date_remainder_must_be_chosen=0x7f070032;
         public static final int error_message_goods_date_validity_must_be_chosen=0x7f070031;
@@ -254,6 +257,8 @@ containing a value of this type.
         public static final int error_this_field_cannot_contain_special_character=0x7f070039;
         public static final int error_url_not_valid=0x7f070041;
         public static final int hello_world=0x7f07000c;
+        public static final int help_msg=0x7f07004c;
+        public static final int how_to_use_the_application=0x7f07004b;
         public static final int message_confirm_delete_goods=0x7f07002d;
         public static final int message_content_picker_date_end_validity_goods=0x7f070035;
         public static final int name=0x7f070011;
@@ -271,6 +276,7 @@ containing a value of this type.
         public static final int quantity_remaining=0x7f07000f;
         public static final int register=0x7f07000b;
         public static final int remind_before=0x7f07000d;
+        public static final int sort_by_date_validity=0x7f07004d;
         public static final int title_activity_add_good=0x7f070006;
         public static final int title_activity_confirm=0x7f070004;
         public static final int title_activity_confirm_add_goods=0x7f070015;
@@ -281,8 +287,8 @@ containing a value of this type.
         public static final int title_activity_view_goods_list=0x7f070008;
         public static final int title_date_picker=0x7f070029;
         public static final int title_delete_goods=0x7f070023;
-        public static final int view_goods_dialog_message_after=0x7f070020;
-        public static final int view_goods_dialog_message_before=0x7f070021;
+        public static final int view_goods_dialog_message_after=0x7f070021;
+        public static final int view_goods_dialog_message_before=0x7f070020;
         public static final int view_goods_dialog_title=0x7f070022;
         public static final int view_goods_validity=0x7f070012;
         public static final int welcom_msg=0x7f070009;
@@ -299,16 +305,14 @@ containing a value of this type.
             backward-compatibility can go here.
         
 
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     
- API 11 theme customizations can go here. 
 
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -357,9 +361,21 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
         /**     bleu 0A3598 517CDF 
+     0DAD81  , 089733 
+    bleu 0A3598 517CDF 
+     0DAD81  , 089733 
+    bleu 0A3598 517CDF 
+     0DAD81  , 089733 
+    bleu 0A3598 517CDF 
+     0DAD81  , 089733 
+    bleu 0A3598 517CDF 
+     0DAD81  , 089733 
+    bleu 0A3598 517CDF 
      0DAD81  , 089733 
          */
         public static final int LabelColorSizeStyle=0x7f080005;
@@ -374,15 +390,15 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #FormEditText_classType com.sol.foodvalidity.activity:classType}</code></td><td></td></tr>
-           <tr><td><code>{@link #FormEditText_customFormat com.sol.foodvalidity.activity:customFormat}</code></td><td></td></tr>
-           <tr><td><code>{@link #FormEditText_customRegexp com.sol.foodvalidity.activity:customRegexp}</code></td><td></td></tr>
-           <tr><td><code>{@link #FormEditText_emptyAllowed com.sol.foodvalidity.activity:emptyAllowed}</code></td><td></td></tr>
-           <tr><td><code>{@link #FormEditText_emptyErrorString com.sol.foodvalidity.activity:emptyErrorString}</code></td><td></td></tr>
-           <tr><td><code>{@link #FormEditText_maxNumber com.sol.foodvalidity.activity:maxNumber}</code></td><td></td></tr>
-           <tr><td><code>{@link #FormEditText_minNumber com.sol.foodvalidity.activity:minNumber}</code></td><td></td></tr>
-           <tr><td><code>{@link #FormEditText_testErrorString com.sol.foodvalidity.activity:testErrorString}</code></td><td></td></tr>
-           <tr><td><code>{@link #FormEditText_testType com.sol.foodvalidity.activity:testType}</code></td><td></td></tr>
+           <tr><td><code>{@link #FormEditText_classType com.sol.foodvalidity:classType}</code></td><td></td></tr>
+           <tr><td><code>{@link #FormEditText_customFormat com.sol.foodvalidity:customFormat}</code></td><td></td></tr>
+           <tr><td><code>{@link #FormEditText_customRegexp com.sol.foodvalidity:customRegexp}</code></td><td></td></tr>
+           <tr><td><code>{@link #FormEditText_emptyAllowed com.sol.foodvalidity:emptyAllowed}</code></td><td></td></tr>
+           <tr><td><code>{@link #FormEditText_emptyErrorString com.sol.foodvalidity:emptyErrorString}</code></td><td></td></tr>
+           <tr><td><code>{@link #FormEditText_maxNumber com.sol.foodvalidity:maxNumber}</code></td><td></td></tr>
+           <tr><td><code>{@link #FormEditText_minNumber com.sol.foodvalidity:minNumber}</code></td><td></td></tr>
+           <tr><td><code>{@link #FormEditText_testErrorString com.sol.foodvalidity:testErrorString}</code></td><td></td></tr>
+           <tr><td><code>{@link #FormEditText_testType com.sol.foodvalidity:testType}</code></td><td></td></tr>
            </table>
            @see #FormEditText_classType
            @see #FormEditText_customFormat
@@ -400,7 +416,7 @@ containing a value of this type.
             0x7f010008
         };
         /**
-          <p>This symbol is the offset where the {@link com.sol.foodvalidity.activity.R.attr#classType}
+          <p>This symbol is the offset where the {@link com.sol.foodvalidity.R.attr#classType}
           attribute's value can be found in the {@link #FormEditText} array.
 
 
@@ -410,11 +426,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.sol.foodvalidity.activity:classType
+          @attr name com.sol.foodvalidity:classType
         */
         public static final int FormEditText_classType = 6;
         /**
-          <p>This symbol is the offset where the {@link com.sol.foodvalidity.activity.R.attr#customFormat}
+          <p>This symbol is the offset where the {@link com.sol.foodvalidity.R.attr#customFormat}
           attribute's value can be found in the {@link #FormEditText} array.
 
 
@@ -424,11 +440,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.sol.foodvalidity.activity:customFormat
+          @attr name com.sol.foodvalidity:customFormat
         */
         public static final int FormEditText_customFormat = 4;
         /**
-          <p>This symbol is the offset where the {@link com.sol.foodvalidity.activity.R.attr#customRegexp}
+          <p>This symbol is the offset where the {@link com.sol.foodvalidity.R.attr#customRegexp}
           attribute's value can be found in the {@link #FormEditText} array.
 
 
@@ -438,11 +454,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.sol.foodvalidity.activity:customRegexp
+          @attr name com.sol.foodvalidity:customRegexp
         */
         public static final int FormEditText_customRegexp = 3;
         /**
-          <p>This symbol is the offset where the {@link com.sol.foodvalidity.activity.R.attr#emptyAllowed}
+          <p>This symbol is the offset where the {@link com.sol.foodvalidity.R.attr#emptyAllowed}
           attribute's value can be found in the {@link #FormEditText} array.
 
 
@@ -452,11 +468,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.sol.foodvalidity.activity:emptyAllowed
+          @attr name com.sol.foodvalidity:emptyAllowed
         */
         public static final int FormEditText_emptyAllowed = 5;
         /**
-          <p>This symbol is the offset where the {@link com.sol.foodvalidity.activity.R.attr#emptyErrorString}
+          <p>This symbol is the offset where the {@link com.sol.foodvalidity.R.attr#emptyErrorString}
           attribute's value can be found in the {@link #FormEditText} array.
 
 
@@ -466,11 +482,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.sol.foodvalidity.activity:emptyErrorString
+          @attr name com.sol.foodvalidity:emptyErrorString
         */
         public static final int FormEditText_emptyErrorString = 2;
         /**
-          <p>This symbol is the offset where the {@link com.sol.foodvalidity.activity.R.attr#maxNumber}
+          <p>This symbol is the offset where the {@link com.sol.foodvalidity.R.attr#maxNumber}
           attribute's value can be found in the {@link #FormEditText} array.
 
 
@@ -480,11 +496,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.sol.foodvalidity.activity:maxNumber
+          @attr name com.sol.foodvalidity:maxNumber
         */
         public static final int FormEditText_maxNumber = 8;
         /**
-          <p>This symbol is the offset where the {@link com.sol.foodvalidity.activity.R.attr#minNumber}
+          <p>This symbol is the offset where the {@link com.sol.foodvalidity.R.attr#minNumber}
           attribute's value can be found in the {@link #FormEditText} array.
 
 
@@ -494,11 +510,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.sol.foodvalidity.activity:minNumber
+          @attr name com.sol.foodvalidity:minNumber
         */
         public static final int FormEditText_minNumber = 7;
         /**
-          <p>This symbol is the offset where the {@link com.sol.foodvalidity.activity.R.attr#testErrorString}
+          <p>This symbol is the offset where the {@link com.sol.foodvalidity.R.attr#testErrorString}
           attribute's value can be found in the {@link #FormEditText} array.
 
 
@@ -508,11 +524,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.sol.foodvalidity.activity:testErrorString
+          @attr name com.sol.foodvalidity:testErrorString
         */
         public static final int FormEditText_testErrorString = 1;
         /**
-          <p>This symbol is the offset where the {@link com.sol.foodvalidity.activity.R.attr#testType}
+          <p>This symbol is the offset where the {@link com.sol.foodvalidity.R.attr#testType}
           attribute's value can be found in the {@link #FormEditText} array.
 
 
@@ -539,7 +555,7 @@ containing a value of this type.
 <tr><td><code>date</code></td><td>14</td><td></td></tr>
 <tr><td><code>numericRange</code></td><td>15</td><td></td></tr>
 </table>
-          @attr name com.sol.foodvalidity.activity:testType
+          @attr name com.sol.foodvalidity:testType
         */
         public static final int FormEditText_testType = 0;
     };

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sol.foodvalidity.activity"
+    package="com.sol.foodvalidity"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".main.HomeActivity"
+            android:name=".activity.main.HomeActivity"
             android:label="@string/title_activity_home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,32 +23,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".register.RegisterActivity"
+            android:name=".activity.register.RegisterActivity"
             android:label="@string/title_activity_register" >
         </activity>
         <activity
-            android:name=".register.ConfirmActivity"
+            android:name=".activity.register.ConfirmActivity"
             android:label="@string/title_activity_confirm" >
         </activity>
         <activity
-            android:name=".main.DebugDBActivity"
+            android:name=".activity.main.DebugDBActivity"
             android:label="@string/title_activity_debug_db" >
         </activity>
         <activity
-            android:name=".food.AddFoodActivity"
+            android:name=".activity.food.AddFoodActivity"
             android:label="@string/title_activity_add_good" >
         </activity>
         <activity
-            android:name=".food.ViewFoodsListActivity"
+            android:name=".activity.food.ViewFoodsListActivity"
             android:label="@string/title_activity_view_goods_list" >
         </activity>
         <activity
-            android:name=".food.fragment.ViewFoodsDialogFragment"
+            android:name=".activity.food.fragment.ViewFoodsDialogFragment"
             android:theme="@android:style/Theme.Dialog">
         </activity>
         
-        <service android:name="com.sol.foodvalidity.service.AlarmValidityService" android:enabled="true" />
-		<receiver android:name="com.sol.foodvalidity.receiver.AlarmValidityReceiver"/>
+        <service android:name=".service.AlarmValidityService" android:enabled="true" />
+		<receiver android:name=".receiver.AlarmValidityReceiver"/>
     
     </application>
 

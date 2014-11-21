@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.sol.foodvalidity.activity.R;
 import com.sol.foodvalidity.service.AlarmValidityService;
 
 

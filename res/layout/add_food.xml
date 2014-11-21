@@ -86,18 +86,13 @@
         editTextForm:emptyErrorString="@string/error_message_date_remainder_must_be_chosen"
         editTextForm:testType="nocheck" />
 
-    <TextView
-        android:id="@+id/nullTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="" />
-
     <Button
         android:id="@+id/btnAddGoods"
         style="@style/buttonAction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:text="@string/add_goods" />
     
     <Button
@@ -106,6 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:text="@string/btn_cancel" />
 
 </LinearLayout>

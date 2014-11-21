@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.sol.foodvalidity.activity.R;
+import com.sol.foodvalidity.R;
 import com.sol.foodvalidity.activity.food.ViewFoodsListActivity;
 import com.sol.foodvalidity.model.Food;
 import com.sol.foodvalidity.utils.DateUtils;

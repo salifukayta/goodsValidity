@@ -1,20 +1,18 @@
 package com.sol.foodvalidity.activity.main;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.sol.foodvalidity.activity.R;
+import com.sol.foodvalidity.R;
+import com.sol.foodvalidity.activity.BaseActivity;
 import com.sol.foodvalidity.activity.food.AddFoodActivity;
 import com.sol.foodvalidity.activity.food.ViewFoodsListActivity;
 import com.sol.foodvalidity.activity.register.RegisterActivity;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,33 +42,10 @@ public class HomeActivity extends Activity {
 			}
 		});
 	}
-
-	@Override
-	public void onBackPressed() {
-		Intent intent = new Intent(Intent.ACTION_MAIN);
-		intent.addCategory(Intent.CATEGORY_HOME);
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		intent.putExtra("EXIT", true);
-		startActivity(intent);
-	}
 	
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.home, menu);
-		return true;
+	public void onBackPressed() {
+		super.exitApp();
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 }

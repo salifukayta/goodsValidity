@@ -1,6 +1,5 @@
 package com.sol.foodvalidity.model;
 
-import com.sol.foodvalidity.activity.R;
 import java.io.Serializable;
 import java.util.Date;
 

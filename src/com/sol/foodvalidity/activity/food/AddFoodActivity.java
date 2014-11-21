@@ -6,8 +6,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -15,9 +13,10 @@ import android.widget.Toast;
 
 import com.andreabaccega.formedittextvalidator.DateAfterValidator;
 import com.andreabaccega.widget.FormEditText;
-import com.sol.foodvalidity.activity.R;
-import com.sol.foodvalidity.activity.food.i.OnDataPass;
+import com.sol.foodvalidity.R;
+import com.sol.foodvalidity.activity.BaseActivity;
 import com.sol.foodvalidity.activity.food.fragment.DatePickerDialogFragment;
+import com.sol.foodvalidity.activity.food.i.IOnDataPass;
 import com.sol.foodvalidity.activity.main.HomeActivity;
 import com.sol.foodvalidity.commun.TypeDate;
 import com.sol.foodvalidity.dao.FoodDao;
@@ -26,7 +25,7 @@ import com.sol.foodvalidity.receiver.AlarmValidityReceiver;
 import com.sol.foodvalidity.service.AlarmSetter;
 import com.sol.foodvalidity.utils.DateUtils;
 
-public class AddFoodActivity extends Activity implements OnDataPass<TypeDate, Calendar>{
+public class AddFoodActivity extends BaseActivity implements IOnDataPass<TypeDate, Calendar>{
 	
 	private static final String TAG_PICK_DATE_REMAINDER = "Pick date remainder";
 	private static final String TAG_PICK_DATE_VALIDITY = "Pick date validity";
@@ -115,25 +114,6 @@ public class AddFoodActivity extends Activity implements OnDataPass<TypeDate, Ca
     }
 	    
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.add_good, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
 	public TypeDate getClicked() {
 		return typeDate;
 	}
@@ -150,4 +130,5 @@ public class AddFoodActivity extends Activity implements OnDataPass<TypeDate, Ca
 			etxDateValidity.setText(DateUtils.simpleShortDateFormatter(this.calendarValidity));
 		}
 	}
+	
 }

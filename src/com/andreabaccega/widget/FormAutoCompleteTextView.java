@@ -12,7 +12,6 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
-import com.sol.foodvalidity.activity.R;
 
 /**
  * AutoCompleteTextView Extension to be used in order to create forms in android.
