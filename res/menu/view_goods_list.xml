@@ -3,10 +3,10 @@
     tools:context="com.example.inscriptionform.HomeActivity" >
 
     <item
-        android:id="@+id/action_trie"
+        android:id="@+id/action_sort"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/sort_by_date_validity"/>
+        android:title="@string/pref_list_sort_by"/>
 
     <item
         android:id="@+id/action_help"

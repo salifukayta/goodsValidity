@@ -1,20 +1,13 @@
 <resources>
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+		<item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+		<item name="android:actionBarStyle">@style/MyActionBar</item>
     </style>
     
     <style name="buttonAction" parent="android:Widget.Holo.Light.Button">
@@ -25,16 +18,32 @@
     <style name="backgroundColor">
         <item name="android:background">@drawable/background_selector</item>
     </style>
-    <style name="PageTitleColor" parent="android:Widget.Holo.Light.TextView">
+    <style name="PageTitleStyle" parent="android:Widget.Holo.Light.TextView">
         <item name="android:textColor">#0A3598</item>
         <item name="android:textSize">30sp</item>
     </style>
 <!--    bleu 0A3598 517CDF -->
 <!--     0DAD81  , 089733 -->
-    <style name="LabelColorSizeStyle" parent="android:Widget.Holo.Light.TextView">
+    <style name="LabelStyle" parent="android:Widget.Holo.Light.TextView">
         <item name="android:textColor">#517CDF</item>
         <item name="android:textSize">25sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="toolTipColorSizeStyle" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+       
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+           parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/background3</item>
+	</style>
+    
+	<!-- Action Button averflow style -->
+	<style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
+		<item name="android:src">@drawable/setting</item>
+	</style>
     
 </resources>

@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/txvAddGoodsTitle"
-        style="@style/PageTitleColor"
+        style="@style/PageTitleStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/txvGoodsName"
-        style="@style/LabelColorSizeStyle"
+        style="@style/LabelStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name" />
@@ -38,7 +38,7 @@
 
     <TextView
         android:id="@+id/txvQuantityRemaining"
-        style="@style/LabelColorSizeStyle"
+        style="@style/LabelStyle"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/quantity_remaining" />
@@ -54,7 +54,7 @@
 
     <TextView
         android:id="@+id/txvDateValidity"
-        style="@style/LabelColorSizeStyle"
+        style="@style/LabelStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/date_validity" />
@@ -71,7 +71,7 @@
 	
     <TextView
         android:id="@+id/txvRemindBefore"
-        style="@style/LabelColorSizeStyle"
+        style="@style/LabelStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/remind_before" />
@@ -86,22 +86,50 @@
         editTextForm:emptyErrorString="@string/error_message_date_remainder_must_be_chosen"
         editTextForm:testType="nocheck" />
 
-    <Button
-        android:id="@+id/btnAddGoods"
-        style="@style/buttonAction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="@string/add_goods" />
-    
-    <Button
-        android:id="@+id/btnCancelAddGoods"
-        style="@style/buttonAction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="@string/btn_cancel" />
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    
+	    <TextView
+	        android:id="@+id/etxTakePicture"
+	        style="@style/LabelStyle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentStart="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="10dp"
+	        android:text="Click to take food picture" />
+	    
+	    <ImageButton
+	        android:id="@+id/imgBtnTakeFoodPicture"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentEnd="true"
+	        android:layout_alignTop="@+id/etxTakePicture"
+	        android:src="@drawable/ic_launcher" />
+	    
+	    <Button
+	        android:id="@+id/btnCancelAddGoods"
+	        style="@style/buttonAction"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentEnd="true"
+	        android:layout_marginBottom="10dp"
+	        android:layout_marginEnd="20dp"
+	        android:text="@string/btn_cancel" />
+
+	    <Button
+	        android:id="@+id/btnAddGoods"
+	        style="@style/buttonAction"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentStart="true"
+	        android:layout_marginStart="20dp"
+	        android:layout_marginBottom="10dp"
+	        android:text="@string/add_goods" />
+        
+	</RelativeLayout>
 
 </LinearLayout>

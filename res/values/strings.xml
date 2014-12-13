@@ -2,16 +2,13 @@
 <resources>
 
     <string name="app_name">FoodValidity</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_home">Foods Validity</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_confirm">ConfirmActivity</string>
     <string name="title_activity_debug_db">DebugDBActivity</string>
     <string name="title_activity_add_good">Add Good</string>
     <string name="title_activity_view_goods">ViewGoodsActivity</string>
-    
     <string name="title_activity_view_goods_list">View Food List</string>
-    
     <string name="welcom_msg">Welcom to remind Foods validity app</string>
     <string name="debugdb">debugDB</string>
     <string name="register">Register</string>
@@ -28,18 +25,16 @@
     <string name="pick_a_date">Pick a date</string>
     <string name="pick_validity_date">Pick validity date</string>
     <string name="pick_reminder_date">pick reminder date</string>
-    
     <string name="notification_content_reminder_before"></string>
-    <string name="notification_content_reminder_after"> validity date is on </string>
+    <string name="notification_content_reminder_after">" validity date is on "</string>
     <string name="notification_title_reminder">Validity date approches</string>
-    <string name="notification_ticker_reminder_after"> approches</string>
-    <string name="notification_ticker_reminder_before">Validity date of the food </string>
-
+    <string name="notification_ticker_reminder_before">"Validity date of the food"</string>
+    <string name="notification_ticker_reminder_after">" approches"</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_update_goods_quantity">Update Quantity</string>
     <string name="view_goods_dialog_message_before">"The food "</string>
     <string name="view_goods_dialog_message_after">" is valid until "</string>
-    <string name="view_goods_dialog_title">Foods Informations</string>
+    <string name="view_goods_dialog_title">Food Informations</string>
     <string name="title_delete_goods">Delete Confimation</string>
     <string name="delete_goods_message_1">"Are you sure you want to delete the food "</string>
     <string name="delete_goods_message_2">" having "</string>
@@ -51,42 +46,55 @@
     <string name="error_message_data_validity_after_date_reminder">The date validity must be after the date reminder</string>
     <string name="error_message_none_class_detected">None class detected</string>
     <string name="message_confirm_delete_goods">Confirm delete food</string>
-    <string name="confirmation_goods_deleted_successfully">Foods Deleted Successfully</string>
-    <string name="confirmation_goods_updated_successfully">Foods Updated Successfully</string>
-    <string name="confirmation_goods_saved_successfully">Foods has been saved</string> 
+    <string name="confirmation_goods_deleted_successfully">Food Deleted Successfully</string>
+    <string name="confirmation_goods_updated_successfully">Food Updated Successfully</string>
+    <string name="confirmation_goods_saved_successfully">Food has been saved</string>
     <string name="error_message_goods_date_validity_must_be_chosen">Food\'s date validity must be chosen</string>
     <string name="error_message_date_remainder_must_be_chosen">Date of the remainder must be chosen</string>
     <string name="error_message_quantity_remaining_must_be_chosen">Food\'s quantity must be chosen</string>
     <string name="error_message_goods_name_must_be_chosen">Food\'s name must be chosen</string>
     <string name="message_content_picker_date_end_validity_goods">Set date end of validity of the food</string>
     <string name="pick_reminder_for_goods_validity">Set a reminder for food\'s validity</string>
-   
-    
     <string name="error_only_numeric_digits_allowed">Only numeric digits are allowed.</string>
-	<string name="error_only_numeric_digits_range_allowed">Only numeric digits within the range %1$s - %2$s are allowed.</string>
-	<string name="error_this_field_cannot_contain_special_character">This field cannot contain any special character</string>
-	<string name="error_only_standard_letters_are_allowed">Only standard letters are allowed</string>
-	<string name="error_field_must_not_be_empty">The field must not be empty</string>
+    <string name="error_only_numeric_digits_range_allowed">Only numeric digits within the range %1$s - %2$s are allowed.</string>
+    <string name="error_this_field_cannot_contain_special_character">This field cannot contain any special character</string>
+    <string name="error_only_standard_letters_are_allowed">Only standard letters are allowed</string>
+    <string name="error_field_must_not_be_empty">The field must not be empty</string>
     <string name="error_email_address_not_valid">Email address not valid</string>
     <string name="error_creditcard_number_not_valid">Credit card number is not valid</string>
     <string name="error_phone_not_valid">Phone number not valid</string>
     <string name="error_domain_not_valid">Domain name not valid</string>
-	<string name="error_ip_not_valid">IP Address not valid</string>
-	<string name="error_url_not_valid">Web Url is not valid</string>
+    <string name="error_ip_not_valid">IP Address not valid</string>
+    <string name="error_url_not_valid">Web Url is not valid</string>
     <string name="error_notvalid_personname">Not a valid first or last name.</string>
     <string name="error_notvalid_personfullname">Not a valid full name.</string>
     <string name="error_date_not_valid">Format not valid</string>
-   
     <string name="quantity_food">"Quantity: "</string>
     <string name="date_validity_food">"Date validity: "</string>
     <string name="no_foods_added">no food added</string>
-    
     <string name="action_help">Help</string>
     <string name="action_exit">Exit</string>
     <string name="close">Close</string>
     <string name="how_to_use_the_application">How to use the application</string>
     <string name="help_msg">- First add foods to the app			\n- Then you can view the list of your foods\'s informations			\n- You could update the food quantity by clicking it			\n- Finally you can delete your food by a long pressing</string>
-    <string name="sort_by_date_validity">Sort by date validity</string>
-        
-</resources>
 
+    <string name="pref_list_sort_by">Sort by …</string>
+    
+    <string name="title_activity_setting">Setting</string>
+    <string name="action_setting">Setting</string>
+    
+    <string name="food_name">Food name</string>
+    <string name="food_date_validity">Food date validity</string>
+    
+    <string name="pref_sort_by_name">name</string>
+    <string name="pref_sort_by_datevalidity">dateValidity</string>
+    <string name="pref_sorting_by">pref_sorting_by</string>
+    
+    <string name="sort_by">Sort by</string>
+    <string name="dialog_sorting_by">Sorting by</string>
+    <string name="sort_foods_by">Sort foods by</string>
+    <string name="beware_food_validity_approches">Beware: food validity approaches</string>
+    <string name="attention_food_validity_is_passed">Attention: food validity is passed</string>
+    
+
+</resources>

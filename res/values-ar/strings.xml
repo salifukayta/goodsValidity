@@ -30,10 +30,10 @@
     <string name="pick_validity_date">اختيار تاريخ انتهاء الصلاحية</string>
     <string name="pick_reminder_date">اختيار تاريخ تذكير</string>
     
-    <string name="notification_content_reminder_before">"نهاية صلاحية "</string>
-    <string name="notification_content_reminder_after">"في "</string>
+    <string name="notification_content_reminder_before">" نهاية صلاحية "</string>
+    <string name="notification_content_reminder_after">" في "</string>
     <string name="notification_title_reminder">اقتراب تاريخ نهاية الصلاحية</string>
-    <string name="notification_ticker_reminder_before">"اقتراب تاريخ نهاية الصلاحية "</string>
+    <string name="notification_ticker_reminder_before">" اقتراب تاريخ نهاية الصلاحية "</string>
     <string name="notification_ticker_reminder_after"></string>
 
     <string name="btn_cancel">إلغاء</string>
@@ -45,16 +45,16 @@
     <string name="delete_goods_message_1">"هل أنت متأكد أنك تريد حذف الغذاء "</string>
     <string name="delete_goods_message_2">" المتبقي  فيه "</string>
     <string name="delete_goods_message_3">" والذي تنتهي صلحته في "</string>
-    <string name="delete_goods_message_4">" ?"</string>
+    <string name="delete_goods_message_4">" ؟"</string>
     <string name="btn_delete_goods">حذف</string>
     <string name="title_date_picker">إلتقاط تاريخ</string>
     <string name="btn_choose_date_in_picker">اختيار تاريخ</string>
     <string name="error_message_data_validity_after_date_reminder">يجب أن يكون تاريخ الصلاحيت بعد موعد التذكير</string>
     <string name="message_confirm_delete_goods">تأكيد حذف الغذاء</string>
-    <string name="confirmation_goods_deleted_successfully">تم حذف الغذاء بنجاح </string>
-    <string name="confirmation_goods_updated_successfully">تم تحديث الغذاء بنجاح </string>
+    <string name="confirmation_goods_deleted_successfully">تم حذف الغذاء بنجاح</string>
+    <string name="confirmation_goods_updated_successfully">تم تحديث الغذاء بنجاح</string>
     <string name="confirmation_goods_saved_successfully">تم حفظ الغذاء</string> 
-    <string name="error_message_goods_date_validity_must_be_chosen">يجب اختيار تاريخ  انتهاء ألصلوحية </string>
+    <string name="error_message_goods_date_validity_must_be_chosen">يجب اختيار تاريخ  انتهاء ألصلوحية</string>
     <string name="error_message_date_remainder_must_be_chosen">يجب اختيار موعد التذكير</string>
     <string name="error_message_quantity_remaining_must_be_chosen">يجب اختيار كمية الغذاء</string>
     <string name="error_message_goods_name_must_be_chosen">يجب اختيار اسم الغذاء</string>
@@ -73,5 +73,21 @@
         \n- ثم يمكنك الاطلاع على قائمة المواد الغذائية و معلوماتها  
         \n- من الممكن تحديث كمية الطعام بالنقر عليه 
         \n- وأخيرا يمكنك حذف أي الغذاء بالضغط عليه لفترة طويلة</string>
-    <string name="sort_by_date_validity">ترتيب حسب تاريخ الصلاحية</string>
+        
+    <string name="pref_list_sort_by">Sort by …</string>
+<!--     <string name="pref_sort_by_name">name</string> -->
+<!--     <string name="pref_sort_by_datevalidity">dateValidity</string> -->
+<!--     <string name="pref_sorting_by">pref_sorting_by</string> -->
+    
+	<string name="title_activity_setting">الإعدادات</string>
+	<string name="action_setting">الإعدادات</string>
+    <string name="food_name">اسم الغذاء</string>
+    <string name="food_date_validity">تاريخ صلاحية الغذاء</string>
+    
+    <string name="sort_by">ترتيب حسب</string>
+    <string name="dialog_sorting_by">ترتيب حسب</string>
+    <string name="sort_foods_by">ترتيب الأغذية بـ</string>
+    <string name="beware_food_validity_approches">حذار: إقتراب صلاحية الغذاء</string>
+    <string name="attention_food_validity_is_passed">احذر: انتهاء صلاحية الغذاء</string>
+    
 </resources>

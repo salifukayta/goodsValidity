@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.sol.foodvalidity.R;
-import com.sol.foodvalidity.activity.food.i.IOnDataPass;
+import com.sol.foodvalidity.activity.food.i.IOnFoodPass;
 import com.sol.foodvalidity.commun.TypeOperation;
 import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.model.Food;
@@ -20,13 +20,13 @@ import com.sol.foodvalidity.utils.DateUtils;
 
 public class ConfirmationDeleteGoodsFragment extends DialogFragment {
 
-	private IOnDataPass<Food, TypeOperation> dataPass;
+	private IOnFoodPass<Food, TypeOperation> dataPass;
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		dataPass = (IOnDataPass<Food, TypeOperation>) activity;
+		dataPass = (IOnFoodPass<Food, TypeOperation>) activity;
 	}
 
 	@Override

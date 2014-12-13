@@ -67,5 +67,21 @@
 		\n- Ensuite, il est possible de voir la liste des nourrites afin de consulter leurs informations
 		\n- Vous pouvez mettre à jour la quantité de nourriture en cliquant dessus
 		\n- Enfin, vous pouvez supprimer une nourriture par un appui long</string>
-    <string name="sort_by_date_validity">Trier par date validité</string>
+
+    <string name="pref_list_sort_by">Trier par …</string>
+<!--     <string name="pref_sort_by_name">name</string> -->
+<!--     <string name="pref_sort_by_datevalidity">dateValidity</string> -->
+<!--     <string name="pref_sorting_by">pref_sorting_by</string> -->
+    
+	<string name="title_activity_setting">Paramètres</string>
+    <string name="action_setting">Paramètres</string>
+    <string name="food_name">Nom de l\'aliment</string>
+    <string name="food_date_validity">Date de validité de l\'aliment</string>
+    
+    <string name="sort_by">Trier par</string>
+    <string name="dialog_sorting_by">tri par</string>
+    <string name="sort_foods_by">Trier les aliments par</string>
+    <string name="beware_food_validity_approches">Soyez vigilant: validité alimentaire approche</string>
+    <string name="attention_food_validity_is_passed">Attention: la validité de nourriture est passée</string>
+    	
 </resources>

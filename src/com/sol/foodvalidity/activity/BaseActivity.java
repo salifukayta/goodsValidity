@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sol.foodvalidity.R;
+import com.sol.foodvalidity.activity.main.SettingActivity;
 import com.sol.foodvalidity.activity.main.fragment.HelpFragment;
 
 public abstract class BaseActivity extends Activity{
@@ -13,15 +14,18 @@ public abstract class BaseActivity extends Activity{
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.action_exit:
-			exitApp();
-			return true;
-		case R.id.action_help:
-			HelpFragment helpFragment = new HelpFragment();
-			helpFragment.show(getFragmentManager(), "help");
-			return true;
-		default:
-			break;
+			case R.id.action_setting:
+				startActivity(new Intent(getApplicationContext(), SettingActivity.class));
+				return true;
+			case R.id.action_exit:
+				exitApp();
+				return true;
+			case R.id.action_help:
+				HelpFragment helpFragment = new HelpFragment();
+				helpFragment.show(getFragmentManager(), "help");
+				return true;
+			default:
+				break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

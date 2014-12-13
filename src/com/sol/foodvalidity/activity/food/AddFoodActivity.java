@@ -16,7 +16,7 @@ import com.andreabaccega.widget.FormEditText;
 import com.sol.foodvalidity.R;
 import com.sol.foodvalidity.activity.BaseActivity;
 import com.sol.foodvalidity.activity.food.fragment.DatePickerDialogFragment;
-import com.sol.foodvalidity.activity.food.i.IOnDataPass;
+import com.sol.foodvalidity.activity.food.i.IOnFoodPass;
 import com.sol.foodvalidity.activity.main.HomeActivity;
 import com.sol.foodvalidity.commun.TypeDate;
 import com.sol.foodvalidity.dao.FoodDao;
@@ -25,7 +25,7 @@ import com.sol.foodvalidity.receiver.AlarmValidityReceiver;
 import com.sol.foodvalidity.service.AlarmSetter;
 import com.sol.foodvalidity.utils.DateUtils;
 
-public class AddFoodActivity extends BaseActivity implements IOnDataPass<TypeDate, Calendar>{
+public class AddFoodActivity extends BaseActivity implements IOnFoodPass<TypeDate, Calendar>{
 	
 	private static final String TAG_PICK_DATE_REMAINDER = "Pick date remainder";
 	private static final String TAG_PICK_DATE_VALIDITY = "Pick date validity";

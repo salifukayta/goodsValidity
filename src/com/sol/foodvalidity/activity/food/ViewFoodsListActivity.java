@@ -11,7 +11,6 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
@@ -21,16 +20,20 @@ import android.widget.Toast;
 import com.sol.foodvalidity.R;
 import com.sol.foodvalidity.activity.food.adapter.FoodListAdapter;
 import com.sol.foodvalidity.activity.food.fragment.ConfirmationDeleteGoodsFragment;
+import com.sol.foodvalidity.activity.food.fragment.SortChoiceDialogFragment;
 import com.sol.foodvalidity.activity.food.fragment.ViewGoodsDialogFragment;
 import com.sol.foodvalidity.activity.food.i.IBaseActivity;
-import com.sol.foodvalidity.activity.food.i.IOnDataPass;
+import com.sol.foodvalidity.activity.food.i.IOnFoodPass;
 import com.sol.foodvalidity.activity.main.fragment.HelpFragment;
 import com.sol.foodvalidity.commun.TypeOperation;
+import com.sol.foodvalidity.comparator.ByDateValidityComparator;
+import com.sol.foodvalidity.comparator.ByNameComparator;
 import com.sol.foodvalidity.dao.FoodDao;
 import com.sol.foodvalidity.model.Food;
+import com.sol.foodvalidity.service.PreferenceService;
 
 public class ViewFoodsListActivity extends ListActivity 
-		implements IOnDataPass<Food, TypeOperation>, IBaseActivity {
+		implements IOnFoodPass<Food, TypeOperation>, IBaseActivity {
 
 	private static final String TAG_VIEW_GOODS_DETAILS = "View Goods Details";
 	private FoodListAdapter foodsAdapter;
@@ -52,23 +55,33 @@ public class ViewFoodsListActivity extends ListActivity
 		txvEmptyMsg.setTextSize(24);
 		txvEmptyMsg.setTextColor(Color.BLACK);
 		txvEmptyMsg.setGravity(Gravity.CENTER);
-				
-		((ViewGroup)livFoods.getParent()).addView(txvEmptyMsg);
+		
 		livFoods.setEmptyView(txvEmptyMsg);
 		
 		foodsAdapter = new FoodListAdapter(this, foodsList);
 		livFoods.setAdapter(foodsAdapter);
-		Log.i("on create food list", foodsList.isEmpty()+"!");
 		
 		livFoods.setOnItemLongClickListener(new OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+				Log.i("item list", "is long pressed");
 				ConfirmationDeleteGoodsFragment confirmationDelteGoodsFragment = new ConfirmationDeleteGoodsFragment();
 				clickedFood = (Food) parent.getItemAtPosition(position);
 				confirmationDelteGoodsFragment.show(getFragmentManager(), getString(R.string.message_confirm_delete_goods));
 				return true;
 			}
 		});
+		String sortOption = PreferenceService.getSortByOption(ViewFoodsListActivity.this);
+		if (sortOption.equals(getString(R.string.pref_sort_by_name))) {
+			foodsAdapter.sort(new ByNameComparator());
+		}
+		else if (sortOption.equals(getString(R.string.pref_sort_by_datevalidity))) {
+			foodsAdapter.sort(new ByDateValidityComparator());
+		}
+	}
+
+	public FoodListAdapter getFoodsAdapter() {
+		return foodsAdapter;
 	}
 
 	@Override
@@ -101,29 +114,37 @@ public class ViewFoodsListActivity extends ListActivity
 	public void onDataPass(final Food food, TypeOperation operation) {
 		switch (operation) {
 		case delete:
-					confirmDelete(food);
+			confirmDelete(food);
 			break;
 		case update:
-					confirmUpdate(food);
+			confirmUpdate(food);
 			break;
 		default:
 			break;
 		}
 	}
 
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		int id = item.getItemId();
-		if (id == R.id.action_exit) {
+		switch (item.getItemId()) {
+		case R.id.action_sort:
+			SortChoiceDialogFragment sortChoiceDialogFragment = new SortChoiceDialogFragment();
+			sortChoiceDialogFragment.show(getFragmentManager(), "Choice sort");
+			return true;
+			
+		case R.id.action_exit:
 			exitApp();
 			return true;
-		}
-		if (id == R.id.action_help) {
+			
+		case R.id.action_help:
 			HelpFragment helpFragment = new HelpFragment();
 			helpFragment.show(getFragmentManager(), "help");
 			return true;
+			
+		default:
+			break;
 		}
+
 		return super.onOptionsItemSelected(item);
 	}
 	

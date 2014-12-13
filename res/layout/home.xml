@@ -12,7 +12,7 @@
 
     <TextView
         android:id="@+id/welcomMsg"
-        style="@style/PageTitleColor"
+        style="@style/PageTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
@@ -35,7 +35,7 @@
         android:text="" />
 
     <Button
-        android:id="@+id/viewGoodsValidity"
+        android:id="@+id/viewFoodsValidity"
         style="@style/buttonAction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

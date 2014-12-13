@@ -1,0 +1,63 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight" >
+
+    <RelativeLayout
+        style="@style/backgroundColor"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:id="@+id/iconList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/firstLineList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/iconList"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/secondLineList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/firstLineList"
+            android:layout_below="@+id/firstLineList"
+            android:layout_toStartOf="@+id/iconState"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/thirdLineList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/secondLineList"
+            android:layout_below="@+id/secondLineList"
+            android:layout_toStartOf="@+id/iconState"
+            android:text="TextView" />
+
+        <ImageView
+            android:id="@+id/iconState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/danger" />
+
+    </RelativeLayout>
+
+    <com.ryanharter.android.tooltips.ToolTipLayout
+        android:id="@+id/tooltip_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

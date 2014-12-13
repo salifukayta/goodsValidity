@@ -9,7 +9,7 @@ package com.sol.foodvalidity.activity.food.i;
  * @param <E>
  * @param <T>
  */
-public interface IOnDataPass<E, T> {
+public interface IOnFoodPass<E, T> {
 	
 	/**
 	 * 
