@@ -45,9 +45,6 @@ public class AlarmSetter {
 		systemCalendar.setTimeInMillis(System.currentTimeMillis());			
 		systemCalendar.set(Calendar.MINUTE, (systemCalendar.get(Calendar.MINUTE) + 1));
 		
-//		long triggerAtMillis = SystemClock.elapsedRealtime() +	60 * 1000;
-//		alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
-		//TODO  à remettre à la fin des DEV
 		alarmManager.set(AlarmManager.RTC_WAKEUP, goods.getRemindBefore().getTimeInMillis(), pendingIntent);
 		Log.i("alarmSet", systemCalendar.get(Calendar.HOUR_OF_DAY) + "h" + systemCalendar.get(Calendar.MINUTE)
 				+ "min");

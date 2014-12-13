@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.andreabaccega.formedittextvalidator.DateAfterValidator;
@@ -50,6 +51,7 @@ public class AddFoodActivity extends BaseActivity implements IOnFoodPass<TypeDat
         goodsDao = FoodDao.getInstance(getApplicationContext());		
         Button btnAddGoods = (Button) findViewById(R.id.btnAddGoods);
         Button btnCancelAddGoods = (Button) findViewById(R.id.btnCancelAddGoods);
+        ImageButton imgBtnTakeFoodPicture = (ImageButton) findViewById(R.id.imgBtnTakeFoodPicture);
 		
         etxGoodName = (FormEditText) findViewById(R.id.etxGoodName);
         etxQuantityRemaining = (FormEditText) findViewById(R.id.etxQuantityRemaining);
@@ -73,6 +75,14 @@ public class AddFoodActivity extends BaseActivity implements IOnFoodPass<TypeDat
 				showPickDate(TypeDate.dateReminder, TAG_PICK_DATE_REMAINDER);
         	}
         });
+        
+        imgBtnTakeFoodPicture.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Log.i("add good", "imgBtnTakeFoodPicture");
+				//TODO open camera, take picture, save it and print it
+			}
+		});
         
         btnCancelAddGoods.setOnClickListener(new OnClickListener() {
 			

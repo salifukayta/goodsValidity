@@ -397,7 +397,6 @@ containing a value of this type.
         /**  Action Button averflow style 
  Action Button averflow style 
  Action Button averflow style 
- 		<item name="android:background">@drawable/setting</item> 
          */
         public static final int MyActionButtonOverflow=0x7f0a0008;
         public static final int PageTitleStyle=0x7f0a0004;
