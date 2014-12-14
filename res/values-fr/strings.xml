@@ -9,7 +9,7 @@
     <string name="title_activity_debug_db">DebugDBActivity</string>
     <string name="title_activity_add_good">Ajout nourriture</string>
     <string name="title_activity_view_goods_list">Liste des nourritures</string>
-    <string name="title_activity_confirm_add_goods">Confirm add goods</string>
+    <string name="title_activity_confirm_add_goods">Confirmation ajout nourriture</string>
     <string name="welcom_msg">Bienvenu à l\'app de rappelle de date de vaidité de votre nourriture</string>
     <string name="debugdb">debugBD</string>
     <string name="register">Enregistrement</string>
@@ -18,13 +18,13 @@
     <string name="quantity_remaining">Quantité restante</string>
     <string name="add_goods">Ajouter nourriture</string>
     <string name="name">"Nom"</string>
-    <string name="view_goods_validity">Consulté validité nourriture</string>
+    <string name="view_goods_validity">Consulter validité nourriture</string>
     <string name="congras_you_have_been_subscribed">Félicitation vous êtes bien enregistrer</string>
     <string name="your_goods_have_been_saved">La nourriture a été ajouter !</string>
     <string name="pick_a_date">Choisir une date</string>
     <string name="pick_validity_date">Choisir la date de fin de validité</string>
     <string name="pick_reminder_date">Choisir la date de rappelle</string>
-    <string name="btn_cancel">Annulé</string>
+    <string name="btn_cancel">Annuler</string>
     <string name="btn_update_goods_quantity">Modifier quantité</string>
     <string name="view_goods_dialog_title">Informations nourriture</string>
     <string name="title_delete_goods">Confirmation de suppression</string>
