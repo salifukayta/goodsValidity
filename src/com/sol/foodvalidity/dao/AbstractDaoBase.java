@@ -8,15 +8,15 @@ import android.database.sqlite.SQLiteDatabase;
 
 public abstract class AbstractDaoBase {
 
-	protected final static int VERSION = 2;
+	protected final static int VERSION = 5;
 
 	protected final static String NOM = "foodValidityBase.db";
 
 	protected SQLiteDatabase dataBase = null;
 	protected DatabaseHandler baseHandler = null;
 
-	public AbstractDaoBase(Context pContext) {
-		this.baseHandler = new DatabaseHandler(pContext, NOM, null, VERSION);
+	public AbstractDaoBase(Context context) {
+		this.baseHandler = new DatabaseHandler(context, NOM, null, VERSION);
 	}
 
 	public SQLiteDatabase open() {

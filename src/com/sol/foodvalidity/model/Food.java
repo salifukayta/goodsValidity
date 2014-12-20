@@ -5,6 +5,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 public class Food implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -15,7 +18,8 @@ public class Food implements Serializable{
 	private Calendar dateValidity;
 	// to be reminded in "remindBefore" before "dateValidity"
 	private Calendar remindBefore;
-	private String imageUrl;
+	private String pictureUrl;
+	private Bitmap pictureBitMap;
 
 	public Food() {
 		super();
@@ -28,24 +32,24 @@ public class Food implements Serializable{
 		this.dateValidity = dateValidity;
 		this.remindBefore = remindBefore;
 	}
-
-	public Food(Long id, String name, String quantity, Calendar dateValidity, Calendar remindBefore) {
+	
+	public Food(String name, String quantity, Calendar dateValidity, Calendar remindBefore, String pictureUrl) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.quantity = quantity;
 		this.dateValidity = dateValidity;
 		this.remindBefore = remindBefore;
+		this.pictureUrl = pictureUrl;
 	}
 
-	public Food(Long id, String name, String quantity, Calendar dateValidity, Calendar remindBefore, String imageUrl) {
+	public Food(Long id, String name, String quantity, Calendar dateValidity, Calendar remindBefore, String pictureUrl) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.quantity = quantity;
 		this.dateValidity = dateValidity;
 		this.remindBefore = remindBefore;
-		this.imageUrl = imageUrl;
+		this.pictureUrl = pictureUrl;
 	}
 
 	public Long getId() {
@@ -89,12 +93,38 @@ public class Food implements Serializable{
 		setTimeOnSevenAm();
 	}
 
-	public String getImageUrl() {
-		return imageUrl;
+	public String getPictureUrl() {
+		return pictureUrl;
+	}
+	
+	public Bitmap getPictureBitMap() {
+		if (pictureBitMap == null && pictureUrl != null) {
+			BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+			 // Estimation of the dimensions of the View
+	        int targetW = 80;
+	        int targetH = 60;
+
+	        // Get the dimensions of the bitmap
+	        bmOptions.inJustDecodeBounds = true;
+	        BitmapFactory.decodeFile(pictureUrl, bmOptions);
+	        int photoW = bmOptions.outWidth;
+	        int photoH = bmOptions.outHeight;
+
+	        // Determine how much to scale down the image
+	        int scaleFactor = Math.min(photoW/targetW, photoH/targetH);
+
+	        // Decode the image file into a Bitmap sized to fill the View
+	        bmOptions.inJustDecodeBounds = false;
+	        bmOptions.inSampleSize = scaleFactor;
+	        bmOptions.inPurgeable = true;
+
+	        pictureBitMap = BitmapFactory.decodeFile(pictureUrl, bmOptions);
+		}
+       	return pictureBitMap;
 	}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setPictureUrl(String imageUrl) {
+		this.pictureUrl = imageUrl;
 	}
 
 	private void setTimeOnSevenAm() {
@@ -109,12 +139,12 @@ public class Food implements Serializable{
 	public String toString() {
 		DateFormat dateFormat = SimpleDateFormat.getDateInstance(SimpleDateFormat.LONG);
 		try {
-			return "Goods [id=" + id + ", name=" + name + ", quantity=" + quantity
+			return "Food [id=" + id + ", name=" + name + ", quantity=" + quantity
 					+ ", dateValidity=" + dateFormat.format((dateValidity!=null?dateValidity.getTime():""))
 					+ ", remindBefore=" + dateFormat.format((remindBefore!=null?remindBefore.getTime():"")) + "]";			
 		}
 		catch(IllegalArgumentException e) {
-			return "Goods [id=" + id + ", name=" + name + ", quantity=" + quantity + "]";
+			return "Food [id=" + id + ", name=" + name + ", quantity=" + quantity + "]";
 		}
 	}
 

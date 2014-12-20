@@ -19,13 +19,23 @@ public class DateUtils {
 
 	/**
 	 * 
-	 * @param date
+	 * @param calendar
 	 * @param dateFormat
 	 * @return
 	 */
-	public static String simpleDateFormatter(Calendar date, int dateFormat) {
+	public static String simpleDateFormatter(Calendar calendar, int dateFormat) {
 		DateFormat formatter = SimpleDateFormat.getDateInstance(dateFormat);
-		return formatter.format((date!=null?date.getTime():""));
+		return formatter.format((calendar!=null?calendar.getTime():""));
+	}
+	
+	/**
+	 * 
+	 * @param calendar
+	 * @param format
+	 * @return
+	 */
+	public static String custumDateFormatter(Calendar calendar, String format) {
+		return new SimpleDateFormat(format).format(calendar.getTime());
 	}
 	
 	/**

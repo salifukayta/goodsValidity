@@ -15,10 +15,10 @@ import com.sol.foodvalidity.model.User;
 
 public class DebugDBActivity extends Activity {
 	
-	private static final String EXTRA_VALUE_GOODS_CLASS_TYPE = "goods";
+	private static final String EXTRA_VALUE_FOOD_CLASS_TYPE = "food";
 	private static final String EXTRA_VALUE_USER_CLASS_TYPE = "user";
 	private static final String EXTRA_KEY_CLASS_TYPE = "classType";
-	private FoodDao goodsDao;
+	private FoodDao foodDao;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +32,8 @@ public class DebugDBActivity extends Activity {
 			printUsersList(gridLayout);
 			
 		} 
-		else if (classType.equals(EXTRA_VALUE_GOODS_CLASS_TYPE)){
-			printGoodsList(gridLayout);			
+		else if (classType.equals(EXTRA_VALUE_FOOD_CLASS_TYPE)){
+			printFoodList(gridLayout);			
 		}			
 		else {
 			printOk(gridLayout);
@@ -60,15 +60,15 @@ public class DebugDBActivity extends Activity {
 		}
 	}
 	
-	protected void printGoodsList(GridLayout gridLayout) {
-		goodsDao = FoodDao.getInstance(getApplicationContext());
-		goodsDao.open();
-		List<Food> goodsList = goodsDao.getAll();		
-		gridLayout.setRowCount(goodsList.size());
+	protected void printFoodList(GridLayout gridLayout) {
+		foodDao = FoodDao.getInstance(getApplicationContext());
+		foodDao.open();
+		List<Food> foodList = foodDao.getAll();		
+		gridLayout.setRowCount(foodList.size());
 		int i = 0;
-		for (Food goods : goodsList) {
+		for (Food food : foodList) {
 			TextView textView = new TextView(getApplicationContext());
-			textView.setText(goods.getName()+" "+goods.getQuantity()+" "+goods.getDateValidity());
+			textView.setText(food.getName()+" "+food.getQuantity()+" "+food.getDateValidity());
 			gridLayout.addView(textView ,i);
 			i++;
 		}

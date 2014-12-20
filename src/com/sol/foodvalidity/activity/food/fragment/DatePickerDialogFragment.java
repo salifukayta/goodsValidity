@@ -69,10 +69,10 @@ public class DatePickerDialogFragment extends DialogFragment {
 		int viewMsg = -1;
 		switch (dataPass.getClicked()) {
 			case dateValidity:
-				viewMsg = R.string.message_content_picker_date_end_validity_goods;
+				viewMsg = R.string.message_content_picker_date_end_validity_food;
 				break;
 			case dateReminder:
-				viewMsg =	R.string.pick_reminder_for_goods_validity;
+				viewMsg =	R.string.pick_reminder_for_food_validity;
 				break;
 		}
 		return viewMsg;

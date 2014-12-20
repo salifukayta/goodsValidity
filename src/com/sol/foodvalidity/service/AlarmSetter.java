@@ -15,7 +15,8 @@ import com.sol.foodvalidity.receiver.AlarmValidityReceiver;
 public class AlarmSetter {
 	
 	private static AlarmSetter CURRENT_INSTANCE;
-	private static final String EXTRA_KEY_GOODS = "goods";
+	private static final String FOOD_EXTRA_NAME = "food";
+	private static final int REQUEST_ALARM = 0;
 
 	private AlarmSetter() {
 		super();
@@ -32,21 +33,22 @@ public class AlarmSetter {
 		return CURRENT_INSTANCE;
 	}
 
-	public void setAlarm(Activity currentActivity, Food goods, Class<AlarmValidityReceiver> receiverClass) {					    
-	    Log.i("alarm", "before setAlarm");
+	public void setAlarm(Activity currentActivity, Food food, Class<AlarmValidityReceiver> receiverClass) {					    
 		Intent alarmValidityReceiverIntent = new Intent(currentActivity.getApplicationContext(), receiverClass);
-		alarmValidityReceiverIntent.putExtra(EXTRA_KEY_GOODS, goods);
-		PendingIntent pendingIntent = PendingIntent.getBroadcast(currentActivity.getApplicationContext(), 0, 
-				alarmValidityReceiverIntent, 0);
+		alarmValidityReceiverIntent.putExtra(FOOD_EXTRA_NAME, food);
+		
+		PendingIntent pendingIntent = PendingIntent.getBroadcast(currentActivity.getApplicationContext(), REQUEST_ALARM, 
+				alarmValidityReceiverIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
 		AlarmManager alarmManager = (AlarmManager) currentActivity.getSystemService(Context.ALARM_SERVICE);
+
+//		Calendar systemCalendar = Calendar.getInstance();
+//		systemCalendar.setTimeInMillis(System.currentTimeMillis());			
+//		systemCalendar.set(Calendar.MINUTE, (systemCalendar.get(Calendar.MINUTE) + 1));
+//		alarmManager.set(AlarmManager.RTC_WAKEUP, systemCalendar.getTimeInMillis(), pendingIntent);
 		
-		Calendar systemCalendar = Calendar.getInstance();
-		systemCalendar.setTimeInMillis(System.currentTimeMillis());			
-		systemCalendar.set(Calendar.MINUTE, (systemCalendar.get(Calendar.MINUTE) + 1));
-		
-		alarmManager.set(AlarmManager.RTC_WAKEUP, goods.getRemindBefore().getTimeInMillis(), pendingIntent);
-		Log.i("alarmSet", systemCalendar.get(Calendar.HOUR_OF_DAY) + "h" + systemCalendar.get(Calendar.MINUTE)
-				+ "min");
-}
+		alarmManager.set(AlarmManager.RTC_WAKEUP, food.getRemindBefore().getTimeInMillis(), pendingIntent);
+		Log.i("alarmSet", food.getRemindBefore().get(Calendar.HOUR_OF_DAY) + "h" 
+		+ food.getRemindBefore().get(Calendar.HOUR_OF_DAY) + "min");
+	}
 }

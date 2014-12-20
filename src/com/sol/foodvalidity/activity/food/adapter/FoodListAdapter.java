@@ -27,9 +27,10 @@ import com.sol.foodvalidity.utils.DateUtils;
 public class FoodListAdapter extends ArrayAdapter<Food> {
 
 	private static final int POINTER_SIZE = 15;
-	public List<Food> foodsList;
-	public Activity context;
-	public Map<Integer, ToolTipContainer> tooltipContainerMap;
+	private final List<Food> foodsList;
+	private final Activity context;
+	private final Map<Integer, ToolTipContainer> tooltipContainerMap;
+	private ImageView iconList;
 
 	public FoodListAdapter(Activity context, List<Food> foodsList) {
 		super(context, R.layout.row_food, foodsList);
@@ -74,10 +75,12 @@ public class FoodListAdapter extends ArrayAdapter<Food> {
 		txvSecondLine.setText(context.getString(R.string.quantity_food) + food.getQuantity());
 		TextView txvThirdLine = (TextView) view.findViewById(R.id.thirdLineList);
 		txvThirdLine.setText(context.getString(R.string.date_validity_food) + DateUtils.simpleShortDateFormatter(food.getDateValidity()));
-		ImageView iconList = (ImageView) view.findViewById(R.id.iconList);
+		iconList = (ImageView) view.findViewById(R.id.iconList);
 
-		// TODO set food icon
-		iconList.setImageResource(R.drawable.ic_launcher);
+		// delete if to delete default picture
+		if (food.getPictureUrl() != null) { 
+			iconList.setImageBitmap(food.getPictureBitMap());
+		}
 	}
 
 	private void setWarningTooltip(int position, Food food, View view, IconEnum iconEnum) {
@@ -130,18 +133,22 @@ public class FoodListAdapter extends ArrayAdapter<Food> {
 				View contentView = createToolTipView(tooltipMsg, Color.WHITE, tipBgColor);
 				ImageView iconStateView = tooltipContainerMap.get(position).getIconState();
 				
-				// Add the ToolTip to the view, using the default animations
-				ToolTip tip = new ToolTip.Builder(context.getApplicationContext())
-						.anchor(iconStateView) // The view to which the ToolTip should be anchored
-						.gravity(Gravity.START) // The location of the view in relation to the anchor (LEFT, RIGHT, TOP, BOTTOM)
-						.color(tipBgColor) // The color of the pointer arrow
-						.pointerSize(POINTER_SIZE) // The size of the pointer
-						.contentView(contentView) // The actual contents of the ToolTip
-						.dismissOnTouch(true).build();
-				
+				ToolTip tip = createToolTip(tipBgColor, contentView, iconStateView);
 				tipContainer.addTooltip(tip);
 			}
 			tooltipContainerMap.get(position).reverseVisibility();
+		}
+
+		private ToolTip createToolTip(int tipBgColor, View contentView, ImageView iconStateView) {
+			// Add the ToolTip to the view, using the default animations
+			return new ToolTip.Builder(context.getApplicationContext())
+					.anchor(iconStateView) // The view to which the ToolTip should be anchored
+					.gravity(Gravity.CENTER) // The location of the view in relation to the anchor (LEFT, RIGHT, TOP, BOTTOM)
+//						.gravity(Gravity.START) // The location of the view in relation to the anchor (LEFT, RIGHT, TOP, BOTTOM)
+					.color(tipBgColor) // The color of the pointer arrow
+					.pointerSize(POINTER_SIZE) // The size of the pointer
+					.contentView(contentView) // The actual contents of the ToolTip
+					.dismissOnTouch(true).build();
 		}
 	}
 }

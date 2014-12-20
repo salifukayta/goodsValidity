@@ -6,7 +6,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Bitmap;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -16,12 +16,11 @@ import com.sol.foodvalidity.model.Food;
 import com.sol.foodvalidity.utils.DateUtils;
 
 public class AlarmValidityService extends Service {
-	
+
 	private String notification_title_reminder;
 
 	private static final String ANDROID_RESOURCE = "android.resource://";
-	private static final String GOODS_EXTRA_NAME = "goods";
-	private static final int ID_NOTIFICATION = 500;
+	private static final String FOOD_EXTRA_NAME = "food";
 
 	@Override
 	public IBinder onBind(Intent arg0) {
@@ -36,40 +35,54 @@ public class AlarmValidityService extends Service {
 
 	@Override
 	public void onStart(Intent intent, int startId) {
-		Log.i("alarm", "begin onStart Service");
+		Log.i("alarmService", "begin onStart Service");
 		Intent intentNextView = new Intent(this.getApplicationContext(), ViewFoodsListActivity.class);
 		intentNextView.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		PendingIntent pendingNotificationIntent = PendingIntent.getActivity(this.getApplicationContext(), 0, 
 				intentNextView, PendingIntent.FLAG_UPDATE_CURRENT);
+
+		if (intent == null || !intent.hasExtra(FOOD_EXTRA_NAME)) {
+			return;
+		}
 		
-		Food goods = (Food) intent.getExtras().getSerializable(GOODS_EXTRA_NAME);
+		Food food = (Food) intent.getExtras().getSerializable(FOOD_EXTRA_NAME);
+		Bitmap foodPicture = food.getPictureBitMap();
 		
-		Notification notification = new Notification.Builder(getApplicationContext()).setAutoCancel(true)
-				.setTicker(prepareTickerText(goods))
+		Notification.Builder builder = new Notification.Builder(getApplicationContext()).setAutoCancel(true)
+				.setTicker(prepareTickerText(food))
 				.setContentTitle(notification_title_reminder)
-				.setContentText(prepareContentText(goods))
+				.setContentText(prepareContentText(food))
 //				.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-				.setSound(Uri.parse(ANDROID_RESOURCE + getApplicationContext().getPackageName() 
-						+ "/" + R.raw.darara))
 				//TODO android 5 => notification appear on locked screen
 //				.setVisibility(VISIBILITY_PUBLIC)
-				.setContentIntent(pendingNotificationIntent).setSmallIcon(R.drawable.ic_launcher).build();
+				.setContentIntent(pendingNotificationIntent)
+				.setLargeIcon(foodPicture)
+				.setDefaults(Notification.DEFAULT_SOUND)
+				.setSmallIcon(R.drawable.fruit);
+
+//		try {
+//			builder.setSound(Uri.parse(ANDROID_RESOURCE + getApplicationContext().getPackageName() + "/" + R.raw.darara));
+//		} catch (Exception e) {
+//			Log.e("alarmService", "setSound exception");
+//		}
+		
+				Notification notification = builder.build();
 
 		NotificationManager notifManager = (NotificationManager) this.getApplicationContext()
 				.getSystemService(Context.NOTIFICATION_SERVICE);
-		notifManager.notify(ID_NOTIFICATION, notification);
-		Log.i("alarm", "end onStart Service");
+		notifManager.notify(food.getId().intValue(), notification);
+		Log.i("alarmService", "end onStart Service");
 	}
-
-	private String prepareTickerText(Food goods) {
-		return getString(R.string.notification_ticker_reminder_before) + goods.getName() 
+	
+	private String prepareTickerText(Food food) {
+		return getString(R.string.notification_ticker_reminder_before) + food.getName() 
 				+getString( R.string.notification_ticker_reminder_after);
 	}
 
-	private String prepareContentText(Food goods) {
-		return getString(R.string.notification_content_reminder_before) + goods.getName() 
+	private String prepareContentText(Food food) {
+		return getString(R.string.notification_content_reminder_before) + food.getName() 
 				+ getString(R.string.notification_content_reminder_after)
-		+ DateUtils.simpleShortDateFormatter(goods.getDateValidity());
+		+ DateUtils.simpleShortDateFormatter(food.getDateValidity());
 	}
 
 	@Override

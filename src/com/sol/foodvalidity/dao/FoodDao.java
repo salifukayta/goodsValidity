@@ -13,23 +13,25 @@ import com.sol.foodvalidity.model.Food;
 public class FoodDao extends AbstractDaoBase {
 
 	private static FoodDao instance;
-	public static final String TABLE_NAME = "goods";
+	public static final String TABLE_NAME = "food";
 	public static final String KEY = "id";
-	public static final String GOODS_NAME = "name";
-	public static final String GOODS_QUANTITY = "quantity";
-	public static final String GOODS_DATE_VALIDITY = "dateValidity";
-	public static final String GOODS_REMIND_BEFORE = "remindBefore";
+	public static final String FOOS_NAME = "name";
+	public static final String FOOD_QUANTITY = "quantity";
+	public static final String FOOD_DATE_VALIDITY = "dateValidity";
+	public static final String FOOD_REMIND_BEFORE = "remindBefore";
+	public static final String FOOD_PICTURE_URL = "pictureUrl";
 
-	public static final String[] GOODS_COLUMNS = {KEY, GOODS_NAME, GOODS_QUANTITY,
-		GOODS_DATE_VALIDITY, GOODS_REMIND_BEFORE};
+	public static final String[] FOOD_COLUMNS = {KEY, FOOS_NAME, FOOD_QUANTITY,
+		FOOD_DATE_VALIDITY, FOOD_REMIND_BEFORE, FOOD_PICTURE_URL};
 
 	public static final String CREATE_TABLE = 
 			"CREATE TABLE " + TABLE_NAME + " (" + 
 					KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
-					GOODS_NAME + " TEXT, " + 
-					GOODS_QUANTITY + " TEXT, " + 
-					GOODS_DATE_VALIDITY + " TEXT, " + 
-					GOODS_REMIND_BEFORE + " TEXT);";
+					FOOS_NAME + " TEXT, " + 
+					FOOD_QUANTITY + " TEXT, " + 
+					FOOD_DATE_VALIDITY + " TEXT, " + 
+					FOOD_REMIND_BEFORE + " TEXT," +
+					FOOD_PICTURE_URL + " TEXT);";
 
 	public static final String TABLE_DROP = "DROP TABLE IF EXISTS " + TABLE_NAME + ";";
 	
@@ -59,35 +61,36 @@ public class FoodDao extends AbstractDaoBase {
 	}
 
 	/**
-	 * @param goods to be added to base
+	 * @param food to be added to base
 	 */
-	public long add(Food goods) {
-		ContentValues value = fillGoods(goods);
+	public long add(Food food) {
+		ContentValues value = fillFood(food);
 		return dataBase.insert(TABLE_NAME, null, value);
 	}
 	
 	/** 
 	 * Add good and close connection
-	 * @param goods to be added to base
+	 * @param food to be added to base
 	 */
-	public long addOnly(Food goods) {
+	public long addOnly(Food food) {
 		open();
-		ContentValues value = fillGoods(goods);
+		ContentValues value = fillFood(food);
 		long rowId = dataBase.insert(TABLE_NAME, null, value);
 		close();
 		return rowId;
 	}
 
-	private ContentValues fillGoods(Food goods) {
+	private ContentValues fillFood(Food food) {
 		ContentValues value = new ContentValues();
-		value.put(GOODS_NAME, goods.getName());
-		value.put(GOODS_QUANTITY, goods.getQuantity());
-		if (goods.getDateValidity() != null) {
-			value.put(GOODS_DATE_VALIDITY, goods.getDateValidity().getTimeInMillis());
+		value.put(FOOS_NAME, food.getName());
+		value.put(FOOD_QUANTITY, food.getQuantity());
+		if (food.getDateValidity() != null) {
+			value.put(FOOD_DATE_VALIDITY, food.getDateValidity().getTimeInMillis());
 		}
-		if (goods.getRemindBefore() != null) {
-			value.put(GOODS_REMIND_BEFORE, goods.getRemindBefore().getTimeInMillis());
+		if (food.getRemindBefore() != null) {
+			value.put(FOOD_REMIND_BEFORE, food.getRemindBefore().getTimeInMillis());
 		}		
+		value.put(FOOD_PICTURE_URL, food.getPictureUrl());
 		return value;
 	}
 
@@ -101,59 +104,60 @@ public class FoodDao extends AbstractDaoBase {
 	/**
 	 * @param id food to be deleted
 	 */
-	public void deleteOnly(long id) {
+	public int deleteOnly(long id) {
 		open();
-		dataBase.delete(TABLE_NAME, KEY + " = ?", new String[] {String.valueOf(id)});
+		int nbRowAffedted = dataBase.delete(TABLE_NAME, KEY + " = ?", new String[] {String.valueOf(id)});
 		close();
+		return nbRowAffedted;
 	}
 
 	/**
-	 * @param goods to be updated
+	 * @param food to be updated
 	 */
-	public void update(Food goods) {
-		ContentValues value = fillGoods(goods);
+	public void update(Food food) {
+		ContentValues value = fillFood(food);
 		dataBase.update(TABLE_NAME, value, KEY  + " = ?", 
-				new String[] {String.valueOf(goods.getId())});
+				new String[] {String.valueOf(food.getId())});
 	}
 	
 	/**
-	 * @param goods to be updated
+	 * @param food to be updated
 	 */
-	public void updateOnly(Food goods) {
+	public void updateOnly(Food food) {
 		open();
-		ContentValues value = fillGoods(goods);
-		dataBase.update(TABLE_NAME, value, KEY  + " = ?", new String[] {String.valueOf(goods.getId())});
+		ContentValues value = fillFood(food);
+		dataBase.update(TABLE_NAME, value, KEY  + " = ?", new String[] {String.valueOf(food.getId())});
 		close();
 	}
 
 	public Food getById(long id) {
-		Cursor cursor = dataBase.query(TABLE_NAME, GOODS_COLUMNS, KEY + "=?", 
+		Cursor cursor = dataBase.query(TABLE_NAME, FOOD_COLUMNS, KEY + "=?", 
 				new String[] {String.valueOf(id)}, null, null, null);
 		if (cursor instanceof Food) {
 			return (Food) cursor;
 		} 
 		else {
-			List<Food> goods = getGoodsListFromCursor(cursor);
+			List<Food> food = getFoodListFromCursor(cursor);
 			cursor.close();
-			return goods.get(0);
+			return food.get(0);
 		}
 //		Cursor query (boolean distinct, String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy, String limit)
 	}
 
 	public Food getByIdOnly(long id) {
 		open();
-		Cursor cursor = dataBase.query(TABLE_NAME, GOODS_COLUMNS, KEY + "=?", 
+		Cursor cursor = dataBase.query(TABLE_NAME, FOOD_COLUMNS, KEY + "=?", 
 				new String[] {String.valueOf(id)}, null, null, null);
 		if (cursor instanceof Food) {
 			close();
 			return (Food) cursor;
 		} 
 		else {
-			List<Food> goods = getGoodsListFromCursor(cursor);
+			List<Food> food = getFoodListFromCursor(cursor);
 			cursor.close();
 			close();
-			if (goods != null) {
-				return goods.get(0);
+			if (food != null) {
+				return food.get(0);
 			}
 			else{
 				return null;
@@ -163,30 +167,30 @@ public class FoodDao extends AbstractDaoBase {
 	}
 
 	public List<Food> getAll() {
-		Cursor cursor = dataBase.query(TABLE_NAME, GOODS_COLUMNS, null, 
+		Cursor cursor = dataBase.query(TABLE_NAME, FOOD_COLUMNS, null, 
 				null, null, null, null);
-		List<Food> goodsList = getGoodsListFromCursor(cursor);
+		List<Food> foodList = getFoodListFromCursor(cursor);
 		cursor.close();
-		return goodsList;
+		return foodList;
 	}
 
 	public List<Food> getAllOnly() {
 		open();
-		Cursor cursor = dataBase.query(TABLE_NAME, GOODS_COLUMNS, null, 
+		Cursor cursor = dataBase.query(TABLE_NAME, FOOD_COLUMNS, null, 
 				null, null, null, null);
-		List<Food> goodsList = getGoodsListFromCursor(cursor);
+		List<Food> foodList = getFoodListFromCursor(cursor);
 		cursor.close();
 		close();
-		return goodsList;
+		return foodList;
 	}
 
-	protected List<Food> getGoodsListFromCursor(Cursor cursor) {
-		List<Food> goodsList = new ArrayList<Food>();
+	protected List<Food> getFoodListFromCursor(Cursor cursor) {
+		List<Food> foodList = new ArrayList<Food>();
 		while (cursor.moveToNext()) {
-			goodsList.add(new Food(cursor.getLong(0), cursor.getString(1), cursor.getString(2), 
-					getDateFormLong(cursor.getLong(3)), getDateFormLong(cursor.getLong(4))));
+			foodList.add(new Food(cursor.getLong(0), cursor.getString(1), cursor.getString(2), 
+					getDateFormLong(cursor.getLong(3)), getDateFormLong(cursor.getLong(4)), cursor.getString(5)));
 		}
-		return goodsList;
+		return foodList;
 	}
 	
 }

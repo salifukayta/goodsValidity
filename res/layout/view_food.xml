@@ -4,12 +4,12 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="com.sol.foodvalidity.activity.food.fragment.ViewGoodsDialogFragment">
+    tools:context="com.sol.foodvalidity.activity.food.fragment.ViewFoodDialogFragment">
             
     <com.andreabaccega.widget.FormEditText
         editTextForm:testType="nocheck"
-		editTextForm:emptyErrorString="@string/error_message_quantity_remaining_must_be_chosen"
-        android:id="@+id/updateQuantityGoods"
+		editTextForm:emptyErrorString="@string/error_message_quantity_remaining_must_be_filled"
+        android:id="@+id/updateQuantityFood"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -13,6 +13,7 @@
     <TextView
         android:id="@+id/welcomMsg"
         style="@style/PageTitleStyle"
+	    android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
@@ -40,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/view_goods_validity" />
+        android:text="@string/view_food_validity" />
 
     <TextView
         android:id="@+id/nullTextView2"
@@ -64,11 +65,11 @@
         android:text="" />
 
     <Button
-        android:id="@+id/txvAddGoodsTitle"
+        android:id="@+id/txvAddFoodTitle"
         style="@style/buttonAction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/add_goods" />
+        android:text="@string/add_food" />
 
 </LinearLayout>

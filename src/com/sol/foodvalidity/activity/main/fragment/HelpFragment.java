@@ -31,9 +31,9 @@ public class HelpFragment extends DialogFragment {
 		return alertDialog;
 	}
 	
-	private void setButtonPickerLaf(AlertDialog dialogViewGoods) {
-		dialogViewGoods.getButton(DialogInterface.BUTTON_NEGATIVE).setBackground(getResources().getDrawable(R.drawable.button_selector));
-		dialogViewGoods.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(Color.WHITE);
+	private void setButtonPickerLaf(AlertDialog dialogViewFood) {
+		dialogViewFood.getButton(DialogInterface.BUTTON_NEGATIVE).setBackground(getResources().getDrawable(R.drawable.button_selector));
+		dialogViewFood.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(Color.WHITE);
 	}
 
 	
